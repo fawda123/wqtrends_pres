@@ -1,0 +1,315 @@
+\documentclass[serif]{beamer}
+\usetheme{Boadilla}
+\usepackage{graphicx}
+\usepackage[final]{animate}
+\usepackage{breqn}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{shapes,arrows,positioning,shadows}
+\usepackage{subfig}
+\usepackage{pgf}
+
+% change format of enumerated lists
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamertemplate{navigation symbols}{}
+
+%tikz objects
+\tikzstyle{decision} = [diamond, draw, text width=6em, text badly centered, inner sep=2pt, top color=white, bottom color=zissou3]
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
+\tikzstyle{declare} = [rectangle, draw, text width=10em, text centered, minimum height=3em, minimum width=8em, top color = white, bottom color=zissou3]
+
+% knitr setup
+<<setup, include = F, cache = F>>=
+# set global chunk options
+opts_chunk$set(fig.path='fig/', fig.align='center', fig.show='hold',message=F,echo=F,results='asis',dev='pdf',dev.args=list(family='serif'),fig.pos='!ht',warning=F)
+options(replace.assign=TRUE,width=90,digits=1)
+@
+
+% dependent data
+<<dep_dat, include = F, cache = F>>=
+
+@
+
+% custom colors
+<<zissou, echo = F, results = 'asis'>>=
+library(wesanderson)
+pal <- wes.palette(name = 'Zissou', type = 'continuous')
+num.cols <- 5
+
+for(i in 1:num.cols){
+ 
+  col.nm <- paste0('zissou',i)
+  hexa <- paste0(gsub('#','',pal(num.cols)[i]))
+  cat(paste0('\\definecolor{', col.nm,'}{HTML}{',hexa,'}'))
+  
+}
+
+bg_col <- scales::alpha(pal(num.cols)[3], 0.3)
+
+pdf('fig/back_tmp.pdf',bg = bg_col)
+frame()
+invisible(dev.off())
+
+@
+
+% my custom ggplot theme
+<<my_ggplot, echo = F, results = 'hide' , message = F>>=
+theme_mine <- function (base_size = 12, base_family = "") {
+  theme_bw(base_size = base_size, base_family = base_family) %+replace% 
+  theme(
+    plot.background = element_rect(fill='transparent', 
+      colour = NA),
+    panel.background = element_rect(fill='transparent', 
+      colour = NA),
+    legend.background = element_rect(fill='transparent', 
+      colour = NA),
+    strip.background = element_rect(fill = 
+        alpha(pal(5)[5],0.5)),
+    legend.key = element_rect(fill = 'transparent', 
+      colour = NA)
+    )   
+}
+
+# set as default
+theme_set(theme_mine())
+@
+
+% figure used on title page
+<<title_fig, echo = F, results = 'hide', message = F>>=
+load('data/salwt_grd.RData')
+load('data/epc_est.RData')
+
+to.plo <- sal.grd
+labs <- c('January', 'February', 'March', 'April', 'May', 'June', 'July', 
+  'August', 'September', 'October', 'November', 'December')
+to.plo$month.name <- factor(to.plo$month.num, labels = labs)
+
+#min, max sal.ref vals to plot....
+lim.vals<- ddply(
+  epc.est, 
+  .variable = c('seg', 'month.num'), 
+  .fun = function(x){
+    Low <- quantile(x$sal.ref, 0.05)
+    High <- quantile(x$sal.ref, 0.95)
+    data.frame(Low, High)
+    }
+  )
+lim.vals$month.name <- factor(lim.vals$month.num, labels = labs)
+
+# months to sub
+month.sub <- 'July'
+to.plo <- to.plo[to.plo$month.name == month.sub, ]
+lim.vals <- lim.vals[lim.vals$month.name == month.sub, ]
+
+# constrain plots to quants
+to.plo <- merge(to.plo, lim.vals, by = c('seg'), all.x = T)
+sel.vec <- with(to.plo, 
+  sal.grid >= Low &
+  sal.grid <= High
+  )
+to.plo <- to.plo[sel.vec, ]
+
+#y axis label for plots
+ylabs<-expression(paste('Chloropyhll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
+
+p1 <- ggplot(to.plo, aes(x = sal.grid, y = bt.md, group = dec.time, 
+    colour = dec.time)) + 
+  geom_line(size = 1) + 
+  facet_wrap(~seg, scales = 'free', ncol = 4) + 
+  scale_y_continuous(ylabs) +
+  scale_x_continuous(name=expression(italic(Sal[ff]))) +
+  theme_mine() +
+  theme(legend.position = 'bottom') +
+  scale_colour_gradientn('Year', colours = pal(5))
+
+
+pdf('fig/title_plo.pdf', width = 12, height =3.5, family = 'serif')
+print(p1)
+dev.off()
+@
+
+\setbeamercolor{title}{fg=zissou1} % main title
+\setbeamercolor{frametitle}{fg=zissou3, bg=zissou2} % frame titles
+\setbeamercolor{structure}{fg=zissou5} % bottom banner
+\setbeamercolor{normal text}{fg=zissou1}
+\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{fig/back_tmp.pdf}}
+
+\begin{document}
+
+\title[Evaluating water quality]{\textbf{The search for truth in numbers: Quantitative approaches for evaluating trends in water quality data}}
+\author[M. Beck]{Marcus W. Beck}
+
+\institute[USEPA]{ORISE post-doc, USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
+
+\date{Oct. 24, 2014}
+
+\titlegraphic{\includegraphics[width=0.95\linewidth]{fig/title_plo.pdf}}
+
+%%%%%%
+\begin{frame}[shrink]
+\titlepage
+\end{frame}
+
+\section{Background}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\onslide<+->
+\begin{quote}
+Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{organic matter} to an ecosystem\\~\\
+\vspace{0.05in}
+\hfill -- \cite{Nixon95}
+\end{quote}
+\onslide<+->
+\begin{center}
+\scalebox{1}{
+\begin{tikzpicture}[node distance = 4cm, auto, >=stealth]
+  \onslide<+->{
+  \node[block] (a) {Nutrient Loading};}
+  \onslide<+->{
+	\node[decision] (b)  [right of=a] {Responses};
+ 	\draw[->] (a) -- (b);}
+  \onslide<+->{
+  \draw[decorate,decoration={brace,amplitude=10pt}] [right of=b] (2,-1.5) -- (2,1.5);
+  \node[draw,align=left,draw=none] [right of=b] {\textbf{Changes in:}\\ Chlorophyll\\ Primary Production\\ System Metabolism\\ Dissolved Oxygen};}
+\end{tikzpicture}}
+\end{center}
+\vspace{-0.5cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Adapted from \cite{Cloern01}}}\\~\\
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\onslide<+->
+Human inputs can greatly accelarate eutrophication... particularly for bays and estuaries \\~\\
+\begin{itemize}
+\onslide<+->
+\item Depletion of bottom water dissolved oxygen \cite{Diaz08}
+\onslide<+->
+\item Increase in frequency/severity of harmful algal blooms \cite{Glibert13}
+\onslide<+->
+\item Reduction or extirpation of seagrass communities \cite{Tomasko05}
+\onslide<+->
+\item Propogated effects to upper trophic levels \cite{Powers05}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\centerline{\includegraphics[width = 0.95\textwidth]{fig/redtide.png}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\onslide<+->
+Water Quality Act Amendments of 1972 \\~\\
+\begin{itemize}
+\item Federal mandates to \alert{protect and restore} the chemical, physical, and biological integrity of \alert{surface waters}
+\item Protection and restoration requires \alert{criteria} \\~\\
+\end{itemize}
+\onslide<+->
+Numeric nutrient criteria \\~\\
+\begin{itemize}
+\item The amounts of contaminants or pollutants that may be present without impairing aquatic life or human health 
+\item E.g., nutrients limits for seagrass in Indian River Lagoon...
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\onslide<+->
+Nutrient limits using seagrass depth-limit targets \tiny \cite{Steward07}\\~\\
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\centerline{\includegraphics[width = 0.9\textwidth]{fig/irl_map.png}}
+\end{column}
+\begin{column}{0.45\textwidth}
+\centerline{\includegraphics[width = 0.92\textwidth]{fig/irl_reg.png}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+\onslide<+->
+USEPA national strategy for the development of regional nutrient criteria\\~\\
+\begin{itemize}
+\item Aid states' ability to control and reduce nutrient enrichments \\~\\
+\item Responsibility of EPA to develop criteria guidance \\~\\
+\end{itemize}
+\scriptsize
+\hfill \cite{USEPA98}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
+USEPA Gulf Ecology Division - guidance to Florida DEP and others on criteria development for estuaries \\~\\
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/sabine.png}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\onslide<+->
+There are challenges to providing guidance...\\~\\
+\alert{Challenge 1:} We don't fully understand eutrophication processes \\~\\
+\begin{quote}
+There are good reasons to believe that eutrophication will, in the near \alert{future}, become a \alert{hazard in marine coastal areas} in many parts of the world.\\~\\
+\vspace{0.05in}
+\hfill -- \cite{Rosenberg85} \\~\\
+\end{quote}
+\end{frame}
+
+%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\onslide<+->
+Our conceptual model for understanding the effects of nutrient pollution is adopted from freshwater sciences. \\~\\
+\begin{center}
+\scalebox{1}{
+\begin{tikzpicture}[node distance = 4cm, auto, >=stealth]
+  \node[block] (a) {Nutrient Loading};
+	\node[decision] (b)  [right of=a] {Responses};
+ 	\draw[->] (a) -- (b);
+  \draw[decorate,decoration={brace,amplitude=10pt}] [right of=b] (2,-1.5) -- (2,1.5);
+  \node[draw,align=left,draw=none] [right of=b] {\textbf{Changes in:}\\ Chlorophyll\\ Primary Production\\ System Metabolism\\ Dissolved Oxygen};
+\end{tikzpicture}}
+\end{center}
+\vspace{-0.5cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Adapted from \cite{Cloern01}}}\\~\\
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+Spatial and temporal variation in estuaries is significant - multiple drivers of system change
+% tb example
+% time series and tidal effects
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\onslide<+->
+\alert{Challenge 2:} Change over time is apparent -- we have the data but often lack tools to unambiguously and quantitatively characterize\\~\\
+\onslide<+->
+\vspace{0.2in}
+\begin{quote}
+Data without models are chaos, but models without data are fantasy. \\~\\
+\vspace{0.05in}
+\hspace{0.1in}-- NWQMC 2014 plenary, R. Hirsch via \cite{Nisbet14}
+\end{quote}
+\end{frame}
+
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\alert{Challenge 2:} 
+\end{frame}
+
+%%%%%%
+\begin{frame}[shrink]{\textbf{References}}
+\footnotesize
+\setbeamertemplate{bibliography item}{}
+\bibliographystyle{apalike_mine}
+\bibliography{ref_diss}
+\end{frame}
+
+\end{document}
