@@ -117,7 +117,6 @@ Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{orga
 \vspace{0.05in}
 \hfill -- \cite{Nixon95}
 \end{quote}
-\onslide<+->
 \begin{center}
 \scalebox{1}{
 \begin{tikzpicture}[node distance = 4cm, auto, >=stealth]
@@ -137,7 +136,7 @@ Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{orga
 %%%%%%
 \begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
 \onslide<+->
-Human inputs can greatly accelarate eutrophication... particularly for bays and estuaries \\~\\
+Human inputs can greatly accelarate eutrophication... particularly for coastal waters \\~\\
 \begin{itemize}
 \onslide<+->
 \item Depletion of bottom water dissolved oxygen \cite{Diaz08}
@@ -232,17 +231,43 @@ Our conceptual model for understanding the effects of nutrient pollution is adop
 \vspace{-0.5cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Adapted from \cite{Cloern01}}}\\~\\
 \end{frame}
 
-%%%%%%
+
+
 \begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-Spatial and temporal variation in estuaries is significant - multiple drivers of system change
-% tb example
-% time series and tidal effects
+Spatial and temporal variation in chlorophyll for Tampa Bay\\~\\
+\begin{columns}
+\begin{column}{0.53\textwidth}
+\begin{center}
+\includegraphics<1>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_1.pdf}
+\includegraphics<2>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_2.pdf}
+\includegraphics<3>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_3.pdf}
+\includegraphics<4>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_4.pdf}
+\includegraphics<5>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_5.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.43\textwidth}
+\begin{center}
+\includegraphics<1>[width=\textwidth]{fig/wbid_map_1.pdf}
+\includegraphics<2>[width=\textwidth]{fig/wbid_map_2.pdf}
+\includegraphics<3>[width=\textwidth]{fig/wbid_map_3.pdf}
+\includegraphics<4>[width=\textwidth]{fig/wbid_map_4.pdf}
+\includegraphics<5>[width=\textwidth]{fig/wbid_map_5.pdf}
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
+
+% %%%%%%
+% \begin{frame}
+% Lots of covariance between parameters that confuses identification of drivers
+% tide v do
+% salinity v chl
+% \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
 \onslide<+->
-\alert{Challenge 2:} Change over time is apparent -- we have the data but often lack tools to unambiguously and quantitatively characterize\\~\\
+\alert{Challenge 2:} We have the data but often lack tools to unambiguously and quantitatively characterize\\~\\
 \onslide<+->
 \vspace{0.2in}
 \begin{quote}
@@ -252,15 +277,151 @@ Data without models are chaos, but models without data are fantasy. \\~\\
 \end{quote}
 \end{frame}
 
-
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\alert{Challenge 2:} 
+\begin{frame}[shrink]{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+System Wide Monitoring Program, initiated in 1995 to provide continuous data at over 300 stations in 28 US estuaries \\~\\
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
+\tiny
+\flushright
+\href{http://nerrs.noaa.gov/ReservesMap.aspx}{http://nerrs.noaa.gov/ReservesMap.aspx}
 \end{frame}
 
 %%%%%%
-\begin{frame}[shrink]{\textbf{References}}
-\footnotesize
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\onslide<+->
+SWMP - As of this month, over 56 million records\\~\\
+\begin{itemize}
+\item Weather $>$ 13 million
+\item Water quality $>$ 43 million
+\item Nutrients $>$ 93 thousand \\~\\
+\end{itemize}
+\onslide<+->
+Despite the quantity and quality of the data, very few comparative analyses. Exceptions... \\~\\
+\begin{itemize}
+\item Comparison of net metabolism \cite{Caffrey03}, \cite{Caffrey04}
+\item DO variation between estuaries \cite{Wenner04}
+\item Synthesis reports \cite{Wenner01}, \cite{Sanger02}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\onslide<+->
+Guidance may come in many forms - not just a number \\~\\
+\onslide<+->
+\alert{Case 1:} Chlorophyll drivers in Tampa Bay\\~\\
+\onslide<+->
+\alert{Case 2:} Improving our understanding of seagrass growth and water quality\\~\\
+\onslide<+->
+\alert{Case 3:} `Open-science' tools for analysis of water quality\\~\\
+\onslide<+->
+Each provides an example of addressing the dual challenges of \alert{understanding nutrient dynamics} and \alert{developing quantitative tools} for trend evaluation 
+\end{frame}
+
+% tampa bay map, w/ inset
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Four bay segments\\~\\
+\item Monthly wq data at 50 stations from 1974 to present \\~\\
+\item Longitudinal profile of nutrient load and salinity \\~\\
+\end{itemize}
+\vspace{0cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Data from \cite{TBEP11}}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/tb_map.pdf}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{figure}[!ht]
+
+
+{\centering \includegraphics[width=\linewidth]{fig/annual_chl} 
+
+}
+
+\caption[Annual trends in chlorophyll for each bay segment]{Annual trends in chlorophyll for each bay segment.\label{fig:annual_chl}}
+\end{figure}
+
+
+\end{frame}
+
+% variation in chl by year, season, and management
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+What affects our interpretation of chlorophyll response to nutrients?
+\vspace{-0.1in}
+\captionsetup[subfloat]{captionskip=0pt, position=top}
+\begin{figure}
+\centering
+\subfloat[]{
+\includegraphics[width=0.46\textwidth,page=1,trim=0.2in 0in 0in 0.35in,clip]{fig/salmoyr.pdf}
+\label{fig:salmoyr1}
+}
+\subfloat[]{
+\includegraphics[width=0.46\textwidth,page=2,trim=0.2in 0in 0in 0.35in,clip]{fig/salmoyr.pdf}
+\label{fig:salmoyr2}
+}
+
+\leavevmode\smash{\makebox[0pt]{\hspace{0em}% HORIZONTAL POSITION           
+  \rotatebox[origin=l]{90}{\hspace{3em}% VERTICAL POSITION
+    {\color{black} Chlorophyll-\textit{a}}}}}
+    \hspace{0pt plus 1filll}\null
+
+\caption{Variation in chlorophyll by {\color{zissou5}\protect\subref{fig:salmoyr1}} time and {\color{zissou5}\protect\subref{fig:salmoyr2}} salinity and management in Hillsborough Bay.  Panel {\color{zissou5}\protect\subref{fig:salmoyr1}} is colored before and after wastewater treatment in 1979.}
+\label{fig:salmoyr}
+\end{figure}
+\captionsetup[subfloat]{position=top}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\onslide<+->
+\begin{block}{Study objective}
+Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets
+\end{block}
+\vspace{0.2in}
+\onslide<+->
+Questions of management concern -- Can we...
+\begin{itemize}
+\item ...provide a natural history of water quality that is temporally consistent with drivers of change?
+\onslide<+->
+\item ...characterize changes in extreme events in addition to describing the mean response?  
+\onslide<+->
+\item ...improve our understanding of the nutrient-response paradigm in estuaries?
+\end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\onslide<+->
+The \alert{weighted regression (WRTDS)} model is being developed by USGS for pollutant modelling in rivers \cite{Hirsch10}\\~\\
+Based on the idea that pollution concentration is a function of \alert{time}, \alert{discharge}, and \alert{season}\\~\\
+\onslide<+->
+\alert{Problem:} We want to see if management has an effect on reducing pollutant load over time, but pollutant load varies with discharge.\\~\\
+\alert{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
+\alert{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
+\end{frame}
+
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{center}
+\animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}[allowframebreaks]{\textbf{References}}
+\tiny
 \setbeamertemplate{bibliography item}{}
 \bibliographystyle{apalike_mine}
 \bibliography{ref_diss}

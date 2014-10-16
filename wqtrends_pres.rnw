@@ -25,12 +25,12 @@
 <<setup, include = F, cache = F>>=
 # set global chunk options
 opts_chunk$set(fig.path='fig/', fig.align='center', fig.show='hold',message=F,echo=F,results='asis',dev='pdf',dev.args=list(family='serif'),fig.pos='!ht',warning=F)
-options(replace.assign=TRUE,width=90,digits=1)
+options(replace.assign=T,width=90,digits=1)
 @
 
 % dependent data
 <<dep_dat, include = F, cache = F>>=
-
+source('R/funcs.R')
 @
 
 % custom colors
@@ -78,7 +78,7 @@ theme_set(theme_mine())
 @
 
 % figure used on title page
-<<title_fig, echo = F, results = 'hide', message = F>>=
+<<title_fig, echo = F, results = 'hide', message = F, eval = F>>=
 load('data/salwt_grd.RData')
 load('data/epc_est.RData')
 
@@ -125,7 +125,6 @@ p1 <- ggplot(to.plo, aes(x = sal.grid, y = bt.md, group = dec.time,
   theme(legend.position = 'bottom') +
   scale_colour_gradientn('Year', colours = pal(5))
 
-
 pdf('fig/title_plo.pdf', width = 12, height =3.5, family = 'serif')
 print(p1)
 dev.off()
@@ -163,7 +162,6 @@ Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{orga
 \vspace{0.05in}
 \hfill -- \cite{Nixon95}
 \end{quote}
-\onslide<+->
 \begin{center}
 \scalebox{1}{
 \begin{tikzpicture}[node distance = 4cm, auto, >=stealth]
@@ -183,7 +181,7 @@ Eutrophication (noun) - an \alert{increase} in the rate of supply of \alert{orga
 %%%%%%
 \begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Research and management in coastal waters}}
 \onslide<+->
-Human inputs can greatly accelarate eutrophication... particularly for bays and estuaries \\~\\
+Human inputs can greatly accelarate eutrophication... particularly for coastal waters \\~\\
 \begin{itemize}
 \onslide<+->
 \item Depletion of bottom water dissolved oxygen \cite{Diaz08}
@@ -278,17 +276,131 @@ Our conceptual model for understanding the effects of nutrient pollution is adop
 \vspace{-0.5cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Adapted from \cite{Cloern01}}}\\~\\
 \end{frame}
 
-%%%%%%
+<<ggch,results = 'hide', echo = F, eval = F>>=
+###
+#import data
+
+#get tampa bay station meta data, all stations
+#created in 'tampa_dat.R'
+#converted to spatial dataframe
+tb.sta<-readShapeSpatial('data/tb_sta.shp')
+
+#shapefile for state
+state<-readShapeSpatial('data/FL_state.shp')
+
+#wbid shapefile for estuaries, subset Tampa Bay
+tb<-readShapeSpatial('data/wbid_tb.shp')
+
+#tampa bay wq data for all tampa bay wbids
+load('data/tb_wq.RData')
+tb.chl<-tb.wq
+
+# upper limit on boxplots
+y.max<-30
+
+##
+# stations
+stats <- paste0('=', c('67', '73', '14', '23', '94'))
+  
+for(stat in stats){
+
+  ##
+  #pick one station
+  sta.one<-stat
+  sta.tst<-tb.chl[tb.chl$StationID==sta.one & as.numeric(tb.chl$year) >= 2000 & as.numeric(tb.chl$year) <= 2010 ,]
+  
+  yr.ave<-melt(lapply(split(sta.tst,sta.tst$year), function(x) x$Chla_ugl))
+  month.ave<-melt(lapply(split(sta.tst,sta.tst$month), function(x) x$Chla_ugl))
+  month.ave$L1<-factor(month.ave$L1,levels=seq(1,12),labels=seq(1,12))
+  
+  plot.dat<-yr.ave
+  fill.dat<-melt(unlist(lapply(split(plot.dat,plot.dat[,2]),function(x) median(x$value))))
+  fill.dat<-data.frame(L1=row.names(fill.dat),Median=fill.dat[,1])
+  fill.val<-merge(plot.dat,fill.dat,by.x='L1')
+  
+  p1<-ggplot(fill.val,aes(x=L1,y=value,fill=Median)) + 
+    geom_boxplot() +
+  	scale_x_discrete('Year') +
+  	scale_y_continuous(
+  		expression(paste('chlorophyll  ',italic(a),' (',italic(mu),'g',l^-1,')')),
+  		limits=c(0,y.max)
+  		) + 
+    scale_fill_gradientn(colours = pal(5)) + 
+    theme_mine() +
+    theme(legend.position = 'none')
+  
+  plot.dat<-month.ave
+  fill.dat<-melt(unlist(lapply(split(plot.dat,plot.dat[,2]),function(x) median(x$value))))
+  fill.dat<-data.frame(L1=row.names(fill.dat),Median=fill.dat[,1])
+  fill.val<-merge(plot.dat,fill.dat,by.x='L1')
+  
+  p2<-ggplot(fill.val,aes(x=L1,y=value,fill=Median)) + 
+  	geom_boxplot() +
+  	scale_x_discrete('Month') +
+  	scale_y_continuous(
+  		expression(paste('chlorophyll  ',italic(a),' (',italic(mu),'g',l^-1,')')),
+  		limits=c(0,y.max)
+  		) +
+    scale_fill_gradientn(colours = pal(5)) + 
+    theme_mine() +
+    theme(legend.position = 'none')
+
+  box_nm <- paste0('fig/ggchl_', which(stat == stats), '.pdf')
+  pdf(box_nm, height = 4.5, width = 5.5)
+  grid.arrange(p1,p2)
+  dev.off()
+  
+  map_nm <- paste0('fig/wbid_map_', which(stat == stats), '.pdf')
+  pdf(map_nm)
+  par(mar=c(0,0,2,0))
+  plot(tb,col=pal(5)[2])
+  plot(state,add=T,col=pal(5)[3])
+  plot(tb,add=T,col=alpha('white',0))
+  points(tb.sta,cex=1.5,pch=16,col=alpha('black',0.7))
+  sta.plot<-tb.sta[tb.sta$StationID %in% sta.one,]
+  points(sta.plot,cex=4,pch=16,col='red')
+  title(paste('Station', gsub('=', '', sta.one)), cex.main = 2.5)
+  dev.off()
+
+}
+  
+@
+
 \begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-Spatial and temporal variation in estuaries is significant - multiple drivers of system change
-% tb example
-% time series and tidal effects
+Spatial and temporal variation in chlorophyll for Tampa Bay\\~\\
+\begin{columns}
+\begin{column}{0.53\textwidth}
+\begin{center}
+\includegraphics<1>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_1.pdf}
+\includegraphics<2>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_2.pdf}
+\includegraphics<3>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_3.pdf}
+\includegraphics<4>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_4.pdf}
+\includegraphics<5>[width=\textwidth,trim=0in 0.2in 0.6in 0in]{fig/ggchl_5.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.43\textwidth}
+\begin{center}
+\includegraphics<1>[width=\textwidth]{fig/wbid_map_1.pdf}
+\includegraphics<2>[width=\textwidth]{fig/wbid_map_2.pdf}
+\includegraphics<3>[width=\textwidth]{fig/wbid_map_3.pdf}
+\includegraphics<4>[width=\textwidth]{fig/wbid_map_4.pdf}
+\includegraphics<5>[width=\textwidth]{fig/wbid_map_5.pdf}
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
+
+% %%%%%%
+% \begin{frame}
+% Lots of covariance between parameters that confuses identification of drivers
+% tide v do
+% salinity v chl
+% \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
 \onslide<+->
-\alert{Challenge 2:} Change over time is apparent -- we have the data but often lack tools to unambiguously and quantitatively characterize\\~\\
+\alert{Challenge 2:} We have the data but often lack tools to unambiguously and quantitatively characterize\\~\\
 \onslide<+->
 \vspace{0.2in}
 \begin{quote}
@@ -298,15 +410,356 @@ Data without models are chaos, but models without data are fantasy. \\~\\
 \end{quote}
 \end{frame}
 
-
 %%%%%%
-\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
-\alert{Challenge 2:} 
+\begin{frame}[shrink]{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+System Wide Monitoring Program, initiated in 1995 to provide continuous data at over 300 stations in 28 US estuaries \\~\\
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
+\tiny
+\flushright
+\href{http://nerrs.noaa.gov/ReservesMap.aspx}{http://nerrs.noaa.gov/ReservesMap.aspx}
 \end{frame}
 
 %%%%%%
-\begin{frame}[shrink]{\textbf{References}}
-\footnotesize
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\onslide<+->
+SWMP - As of this month, over 56 million records\\~\\
+\begin{itemize}
+\item Weather $>$ 13 million
+\item Water quality $>$ 43 million
+\item Nutrients $>$ 93 thousand \\~\\
+\end{itemize}
+\onslide<+->
+Despite the quantity and quality of the data, very few comparative analyses. Exceptions... \\~\\
+\begin{itemize}
+\item Comparison of net metabolism \cite{Caffrey03}, \cite{Caffrey04}
+\item DO variation between estuaries \cite{Wenner04}
+\item Synthesis reports \cite{Wenner01}, \cite{Sanger02}
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{The eutrophication paradigm}}{\textbf{Challenges for criteria development}}
+\onslide<+->
+Guidance may come in many forms - not just a number \\~\\
+\onslide<+->
+\alert{Case 1:} Chlorophyll drivers in Tampa Bay\\~\\
+\onslide<+->
+\alert{Case 2:} Improving our understanding of seagrass growth and water quality\\~\\
+\onslide<+->
+\alert{Case 3:} `Open-science' tools for analysis of water quality\\~\\
+\onslide<+->
+Each provides an example of addressing the dual challenges of \alert{understanding nutrient dynamics} and \alert{developing quantitative tools} for trend evaluation 
+\end{frame}
+
+% tampa bay map, w/ inset
+<<tb_map, fig = F, results = 'hide', echo = F, eval = F>>=
+#wes cols
+cols <- pal(5)
+land_col <- alpha(cols[3],0.8)
+wat_col <- alpha(cols[2],0.5)
+text_col <- cols[5]
+
+#tb segment shapefile
+tb.seg<-readShapeSpatial('data/tb_seg.shp')
+
+#station locations
+tb.crds<-readShapeSpatial('data/tb_sta.shp')
+
+#shapefile for state
+state<-readShapeSpatial('data/FL_state.shp')
+
+##
+pdf('fig/tb_map.pdf', width = 6.5, height = 6.5, family = 'serif')
+
+par(mar=c(0,0,0,0))
+plot(tb.seg,col=wat_col)
+plot(state,add=T,col=land_col)
+plot(tb.seg,add=T,col=alpha('white',0))
+text(tb.crds$Actual_Lon, tb.crds$Actual_Lat, labels=tb.crds$sta,cex=0.75)
+text(tb.seg,labels=tb.seg@data$seg,col = text_col, cex= 2.5)
+
+crds <- list(x1 = -82.47,x2 = -82.3, y1 = 27.53, y2 = 27.69)
+with(crds,rect(x1,y1,x2,y2, col = 'white'))
+bounds <- attributes(extent(tb.seg))
+subplot({
+  plot(state,col=land_col)
+with(bounds,rect(xmin,ymin,xmax,ymax, border = text_col, lwd = 4))
+  }
+,x = mean(unlist(crds[c('x1','x2')])), 
+  y = mean(unlist(crds[c('y1','y2')])), 
+  size = c(2,2))
+
+dev.off()
+@
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Four bay segments\\~\\
+\item Monthly wq data at 50 stations from 1974 to present \\~\\
+\item Longitudinal profile of nutrient load and salinity \\~\\
+\end{itemize}
+\vspace{0cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Data from \cite{TBEP11}}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/tb_map.pdf}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+<<annual_chl, echo = F, message = F, fig.width = 8, fig.height = 4.5, fig.cap = 'Annual trends in chlorophyll for each bay segment.', out.width = '\\linewidth'>>=
+load('data/epc_tb_chl.RData')
+ylabs<-expression(paste('Chloropyhll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
+
+#get median values for chl by year and bay, merge with tb.chl on two columns
+rexp<-"^(\\w+)\\s?(.*)$"
+fill.dat<-melt(unlist(lapply(split(tb.chl,paste(tb.chl$year,tb.chl$seg)),
+  function(x) median(x$Chla_ugl))))
+fill.dat<-data.frame(
+  year=sub(rexp,"\\1",row.names(fill.dat)),
+  seg=sub(rexp,"\\2",row.names(fill.dat)),
+  Median=fill.dat[,1]
+)
+tb.chl.gg<-merge(tb.chl,fill.dat,by.x=c('year','seg'))
+pal <- wes.palette(name = 'Zissou', type = 'continuous')
+p1<-ggplot(tb.chl.gg,aes(x=year,y=Chla_ugl,fill=Median)) + 
+  geom_boxplot(outlier.size=1,outlier.colour=alpha('black', 0.7),size=0.25) + 
+  scale_y_continuous(ylabs,limits=c(0,50)) +
+  scale_fill_gradientn(colours = pal(100)) +
+  facet_wrap(~seg) + 
+  theme_mine() +
+  scale_x_discrete(
+    name=element_blank(),
+    breaks=function(x) seq(1975,2010,by=5)
+    ) + 
+  theme(legend.position = 'none')
+
+print(p1)
+@
+\end{frame}
+
+% variation in chl by year, season, and management
+<<salmoyr,include=F>>=
+#changing trends by year, month, salinity
+
+load('data/epc_est.RData')
+
+ylabs<-expression(paste('Chloropyhll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
+
+to.plo<-epc.est[epc.est$seg=='Hillsborough Bay',]
+to.plo$yr.cut<-cut(as.numeric(to.plo$year),c(-Inf,1979,+Inf),labels=c('before','after'))
+
+#to retain same sig digits for each plot
+fmt <- function(){
+    function(x) format(x,nsmall = 0,scientific = FALSE)
+}
+
+#chlorophyll a over time, combo of year and month plots
+p1<-ggplot(to.plo[to.plo$year %in% c('1975','1985','1995','2005'),],aes(x=month.name,y=exp(Chla_ugl),group=year,colour=year)) + 
+  geom_line(alpha=0.7,size=1) +
+  geom_point(size=3) +
+  theme_mine() +
+  theme(
+    legend.position='top',
+    axis.title.y=element_blank()
+    ) +
+  scale_x_discrete('Month',labels=strsplit('JFMAMJJASOND','')[[1]]) + 
+  scale_colour_manual('Year',values=pal(4))
+
+p2<-ggplot(to.plo,aes(x=Salinity_ppt,y=exp(Chla_ugl))) + 
+  geom_point(data=to.plo,aes(colour=yr.cut,shape=yr.cut),size=3,alpha=0.6) + 
+  theme_mine() +
+  theme(legend.position='top',
+    axis.title.y=element_blank()
+    ) +
+  scale_x_continuous('Salinity') + 
+  scale_y_continuous(labels = fmt()) + 
+  scale_colour_manual('Wastewater treatment',values=pal(2)) +
+  scale_shape_manual('Wastewater treatment',values=c(16,17))
+
+
+# grid.arrange(arrangeGrob(p1,p2,nrow=2,heights=c(9,10),left=textGrob(ylabs,rot=90)))
+
+pdf('fig/salmoyr.pdf',height=3.2,width=3.8,family='serif')
+print(p1)
+print(p2)
+dev.off()
+@
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+What affects our interpretation of chlorophyll response to nutrients?
+\vspace{-0.1in}
+\captionsetup[subfloat]{captionskip=0pt, position=top}
+\begin{figure}
+\centering
+\subfloat[]{
+\includegraphics[width=0.46\textwidth,page=1,trim=0.2in 0in 0in 0.35in,clip]{fig/salmoyr.pdf}
+\label{fig:salmoyr1}
+}
+\subfloat[]{
+\includegraphics[width=0.46\textwidth,page=2,trim=0.2in 0in 0in 0.35in,clip]{fig/salmoyr.pdf}
+\label{fig:salmoyr2}
+}
+
+\leavevmode\smash{\makebox[0pt]{\hspace{0em}% HORIZONTAL POSITION           
+  \rotatebox[origin=l]{90}{\hspace{3em}% VERTICAL POSITION
+    {\color{black} Chlorophyll-\textit{a}}}}}
+    \hspace{0pt plus 1filll}\null
+
+\caption{Variation in chlorophyll by {\color{zissou5}\protect\subref{fig:salmoyr1}} time and {\color{zissou5}\protect\subref{fig:salmoyr2}} salinity and management in Hillsborough Bay.  Panel {\color{zissou5}\protect\subref{fig:salmoyr1}} is colored before and after wastewater treatment in 1979.}
+\label{fig:salmoyr}
+\end{figure}
+\captionsetup[subfloat]{position=top}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\onslide<+->
+\begin{block}{Study objective}
+Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets
+\end{block}
+\vspace{0.2in}
+\onslide<+->
+Questions of management concern -- Can we...
+\begin{itemize}
+\item ...provide a natural history of water quality that is temporally consistent with drivers of change?
+\onslide<+->
+\item ...characterize changes in extreme events in addition to describing the mean response?  
+\onslide<+->
+\item ...improve our understanding of the nutrient-response paradigm in estuaries?
+\end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\onslide<+->
+The \alert{weighted regression (WRTDS)} model is being developed by USGS for pollutant modelling in rivers \cite{Hirsch10}\\~\\
+Based on the idea that pollution concentration is a function of \alert{time}, \alert{discharge}, and \alert{season}\\~\\
+\onslide<+->
+\alert{Problem:} We want to see if management has an effect on reducing pollutant load over time, but pollutant load varies with discharge.\\~\\
+\alert{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
+\alert{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
+\end{frame}
+
+<<wtex, echo = F, results = 'hide', message = F, eval = F>>=
+load('data/epc_tb_dat.RData')
+
+dat.in <- tb.dat[tb.dat$year>=2000 & tb.dat$year <=2010,]
+dat.in <- dat.in[dat.in$seg=='Hillsborough Bay',]
+
+row_exs <- 1:nrow(dat.in)
+
+library(animation)
+ani.options(outdir = getwd())
+saveLatex(
+  {
+
+  for(row_ex in row_exs){
+    
+    cat(row_ex, '\t')
+    
+    ref.in<-dat.in[row_ex,]
+  
+    ##
+    #random year, month, load, one year, wts separated
+    ref.wt<-wt.fun(ref.in,dat.in,all=T)
+    yr.sub<-format(dat.in$date.f,'%Y')==ref.in$year
+    titles<-with(
+      ref.in,
+      c(as.character(month.name),year,substitute(italic(Sal[ff])~sal,list(sal=as.character(round(ref.in$sal.ref,2)))),
+      'All'),
+    )
+    
+    p1.dat<-data.frame(Month=dat.in$date.f[yr.sub],Wt=ref.wt[yr.sub,1])
+    p1<-ggplot(p1.dat,aes(x=Month,y=Wt)) + 
+      geom_line() + 
+      ggtitle(titles[[1]]) +
+      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+      scale_x_date(labels=date_format("%b"),name=element_blank()) +
+      theme_mine()
+    
+    p2.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,2])
+    p2<-ggplot(p2.dat,aes(x=Date,y=Wt)) + 
+      geom_line() + 
+      scale_x_date(name=element_blank(),breaks = as.Date(range(dat.in$date.f)), labels = date_format("%Y-%m")) +
+      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+      ggtitle(titles[[2]]) +
+      theme_mine()
+    
+    #p3 xlims
+    p3x0 <- paste0(as.numeric(ref.in$year)-2,'-01-01')
+    p3x1 <- paste0(as.numeric(ref.in$year)+2,'-01-01')
+    p3.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,3],
+      sal.ref=dat.in$sal.ref)
+    yint<-which(dat.in$sal.ref==ref.in$sal.ref)
+    p3<-ggplot(p3.dat,aes(x=Date,y=Wt)) + 
+      geom_line() + 
+      #geom_line(aes(y=sal.ref),col='red') + 
+      geom_hline(yintercept=p3.dat[yint,'sal.ref'],col='black',lwd=1.5,lty=2) +
+      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+      scale_x_date(name=element_blank(),limits=as.Date(c(p3x0,p3x1)), breaks = as.Date(c(p3x0,p3x1)), labels = date_format("%Y-%m")) +
+      ggtitle(titles[[3]]) +
+      theme_mine()
+    
+    p4.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,1]*ref.wt[,2]*ref.wt[,3])
+    p4<-ggplot(p4.dat,aes(x=Date,y=Wt)) + 
+      geom_line() + 
+      scale_x_date(name=element_blank(),breaks = as.Date(range(dat.in$date.f)), labels = date_format("%Y-%m")) +
+      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+      ggtitle(titles[[4]]) + 
+      theme_mine()
+    
+    ##
+    #ggplot showing point size and color in relation to total weight
+    p.dat<-data.frame(
+      Date=dat.in$date.f,
+      Chla_ugl=dat.in$Chla_ugl,
+      sal.ref=dat.in$sal.ref,
+      month.wt=ref.wt[,1],
+      year.wt=ref.wt[,2],
+      sal.wt=ref.wt[,3],
+      all.wt=ref.wt[,1]*ref.wt[,2]*ref.wt[,3]
+    )
+    
+    title.val<-substitute(
+      mo~yr~italic(Sal[ff])~sal,
+      list(mo=as.character(ref.in$month.name),yr=paste0(ref.in$year,', '),sal=as.character(round(ref.in$sal.ref,2)))
+      )
+      
+    p.dat.plo<-ggplot(p.dat,aes(x=Date,y=sal.ref)) +
+      geom_point(aes(size=all.wt,colour=all.wt)) +
+      scale_y_continuous(limit=c(0,0.7),name=expression(italic(Sal[ff]))) +
+      scale_x_date(name=element_blank()) +
+      scale_size(range=c(4,12)) +
+      ggtitle(title.val) + 
+      theme_mine() +
+      scale_colour_gradientn(colours = pal(100)) +
+      theme(legend.position = 'none')
+    
+    grid.arrange(
+        p.dat.plo,
+        arrangeGrob(p1,p2,p3,p4,nrow=2,left=textGrob('Weights',rot=90)), ncol = 2
+      )
+  }}
+  ,  
+  ani.dev = 'pdf', ani.type='pdf', interval=0.1, ani.width = 7.5, ani.height = 4, family = 'serif',
+  ani.opts='controls',img.name='fig/wtex'
+  )
+@
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\begin{center}
+\animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}[allowframebreaks]{\textbf{References}}
+\tiny
 \setbeamertemplate{bibliography item}{}
 \bibliographystyle{apalike_mine}
 \bibliography{ref_diss}

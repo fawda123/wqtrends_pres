@@ -1,0 +1,231 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  16 OCT 2014 17:59
+entering extended mode
+**animation.tex
+(M:\presentations\wqtrends_pres\animation.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(M:\presentations\wqtrends_pres\animate.sty
+Package: animate 2010/09/28 PDF animations from files and inline graphics
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\ifdraft.sty"
+Package: ifdraft 2008/08/11 v1.3 Detect class options draft and final (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count87
+\calc@Bcount=\count88
+\calc@Adimen=\dimen103
+\calc@Bdimen=\dimen104
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count89
+\calc@Cskip=\skip45
+)
+(M:\presentations\wqtrends_pres\animfp.sty
+Package: animfp 2009/07/23 fixed point addition for animate.sty
+\afp@xs=\count90
+\afp@xia=\count91
+\afp@xib=\count92
+\afp@xfa=\count93
+\afp@xfb=\count94
+\afp@rega=\count95
+\afp@regb=\count96
+\afp@regs=\count97
+)
+(C:\Users\mbeck\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count98
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count99
+\nofMParguments=\count100
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count101
+\MPscratchDim=\dimen106
+\MPnumerator=\count102
+\makeMPintoPDFobject=\count103
+\everyMPtoPDFconversion=\toks16
+)
+\@anim@@fields=\count104
+\@anim@@ocgs=\count105
+\@anim@@posterocgs=\count106
+\@anim@box=\box27
+\@anim@tmpdima=\dimen107
+\@anim@tmpdimb=\dimen108
+\@anim@num=\count107
+\@anim@curframe=\count108
+\@anim@curframe@zb=\count109
+\@anim@resize=\count110
+\@anim@skipfram=\count111
+\@anim@mulframecnt=\count112
+\@anim@@tmlnfile=\read1
+\@anim@tmpcnt=\count113
+\c@@anim@tmpcnt=\count114
+\@anim@curlayer=\count115
+\@anim@lineno=\count116
+\@anim@begin=\toks17
+\@anim@end=\toks18
+)
+No file animation.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+ <M:/presentations/wqtrends_pres/fig/wtex.pdf> <1> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <2> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <3> <M:/pre
+sentations/wqtrends_pres/fig/wtex.pdf> <4> <M:/presentations/wqtrends_pres/fig/
+wtex.pdf> <5> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <6> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <7> <M:/presentations/wqtrends_pres/fig/wtex.pdf
+> <8> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <9> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <10> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <11> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <12> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <13> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <14> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <15> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <16> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <17> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <18> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <19> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <20> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <21> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <22> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <23> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <24> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<25> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <26> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <27> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <28> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <29> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <30> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <31> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <32> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <33> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <34> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <35> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <36> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <37> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <38> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <39> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <40> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <41> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<42> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <43> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <44> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <45> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <46> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <47> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <48> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <49> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <50> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <51> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <52> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <53> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <54> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <55> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <56> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <57> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <58> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<59> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <60> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <61> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <62> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <63> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <64> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <65> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <66> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <67> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <68> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <69> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <70> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <71> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <72> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <73> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <74> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <75> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<76> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <77> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <78> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <79> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <80> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <81> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <82> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <83> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <84> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <85> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <86> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <87> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <88> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <89> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <90> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <91> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <92> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<93> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <94> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <95> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <96> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <97> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <98> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <99> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <100> <M:/presentations/wqtrends_pres/
+fig/wtex.pdf> <101> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <102> <M:/pre
+sentations/wqtrends_pres/fig/wtex.pdf> <103> <M:/presentations/wqtrends_pres/fi
+g/wtex.pdf> <104> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <105> <M:/prese
+ntations/wqtrends_pres/fig/wtex.pdf> <106> <M:/presentations/wqtrends_pres/fig/
+wtex.pdf> <107> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <108> <M:/present
+ations/wqtrends_pres/fig/wtex.pdf> <109> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <110> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <111> <M:/presentat
+ions/wqtrends_pres/fig/wtex.pdf> <112> <M:/presentations/wqtrends_pres/fig/wtex
+.pdf> <113> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <114> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <115> <M:/presentations/wqtrends_pres/fig/wtex.p
+df> <116> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <117> <M:/presentations
+/wqtrends_pres/fig/wtex.pdf> <118> <M:/presentations/wqtrends_pres/fig/wtex.pdf
+> <119> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <120> <M:/presentations/w
+qtrends_pres/fig/wtex.pdf> <121> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<122> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <123> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <124> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<125> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <126> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <127> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<128> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <129> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <130> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<131> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <132>
+Overfull \hbox (197.025pt too wide) in paragraph at lines 6--7
+ [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][] 
+ []
+
+[1{C:/Users/mbeck/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(M:\presentations\wqtrends_pres\animation.aux) ) 
+Here is how much of TeX's memory you used:
+ 1650 strings out of 493921
+ 25445 string characters out of 3147282
+ 88397 words of memory out of 3000000
+ 4998 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 23i,4n,23p,189b,227s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on animation.pdf (1 page, 1227986 bytes).
+PDF statistics:
+ 842 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 2334 words of extra memory for PDF output out of 10000 (max. 10000000)
+

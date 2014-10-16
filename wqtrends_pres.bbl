@@ -1,5 +1,16 @@
 \begin{thebibliography}{}
 
+\bibitem[Caffrey, 2003]{Caffrey03}
+Caffrey JM. 2003.
+\newblock Production, respiration and net ecosystem metabolism in {U.S.}
+  estuaries.
+\newblock Environmental Monitoring and Assessment, 81(1-3):207--219.
+
+\bibitem[Caffrey, 2004]{Caffrey04}
+Caffrey JM. 2004.
+\newblock Factors controlling net ecosystem metabolism in {U.S.} estuaries.
+\newblock Estuaries, 27(1):90--101.
+
 \bibitem[Cloern, 2001]{Cloern01}
 Cloern JE. 2001.
 \newblock Our evolving conceptual model of the coastal eutrophication problem.
@@ -15,6 +26,12 @@ Glibert PM, Hinkle DC, Sturgis B, Jesien RV. 2013.
 \newblock Eutrophication of a {M}aryland/{V}irginia coastal lagoon: A tipping
   point, ecosytem changes, and potential causes.
 \newblock Estuaries and Coasts.
+
+\bibitem[Hirsch et~al., 2010]{Hirsch10}
+Hirsch RM, Moyer DL, Archfield SA. 2010.
+\newblock Weighted regressions on time, discharge, and season ({WRTDS}), with
+  an application to {C}hesapeake {B}ay river inputs.
+\newblock Journal of the American Water Resources Association, 46(5):857--880.
 
 \bibitem[Nisbet et~al., 2014]{Nisbet14}
 Nisbet EG, Dlugokencky EJ, Bousquet P. 2014.
@@ -39,11 +56,26 @@ Rosenberg R. 1985.
 \newblock Eutrophication -- the future marine coastal nuisance?
 \newblock Marine Pollution Bulletin, 16(6):227--231.
 
+\bibitem[Sanger et~al., 2002]{Sanger02}
+Sanger DM, Arendt MD, Chen Y, Wenner EL, Holland AF, Edwards D, Caffrey J.
+  2002.
+\newblock A synthesis of water quality data: National estuarine research
+  reserve system-wide monitoring program (1995-2000).
+\newblock Technical report, National Estuarine Research Reserve Technical
+  Report Series 2002:3. South Carolina Department of Natural Resources, Marine
+  Resources Division Contribution No. 500, Charleston, South Carolina.
+
 \bibitem[Steward and Green, 2007]{Steward07}
 Steward JS, Green WC. 2007.
 \newblock Setting load limits for nutrients and suspended solids based upon
   seagrass depth-limit targets.
 \newblock Estuaries and Coasts, 30(4):657--670.
+
+\bibitem[{TBEP (Tampa Bay Estuary Program)}, 2011]{TBEP11}
+{TBEP (Tampa Bay Estuary Program)}. 2011.
+\newblock {Tampa Bay Water Atlas}.
+\newblock \url{http://www.tampabay.wateratlas.usf.edu/}. (Accessed October,
+  2013).
 
 \bibitem[Tomasko et~al., 2005]{Tomasko05}
 Tomasko DA, Corbett CA, Greening HS, Raulerson GE. 2005.
@@ -57,5 +89,20 @@ Tomasko DA, Corbett CA, Greening HS, Raulerson GE. 2005.
 \newblock National strategy for the development of regional nutrient criteria.
 \newblock Technical Report EPA-822-R-98-002, Office of Water, Office of
   Research and Development, US Environmental Protection Agency, Washington, DC.
+
+\bibitem[Wenner et~al., 2004]{Wenner04}
+Wenner E, Sanger D, Arendt M, Holland AF, Chen Y. 2004.
+\newblock Variability in dissolved oxygen and other water-quality variables
+  within the {N}ational {E}stuarine {R}esearch {R}eserve {S}ystem.
+\newblock Journal of Coastal Research, 45(SI):17--38.
+
+\bibitem[Wenner et~al., 2001]{Wenner01}
+Wenner EL, Holland AF, Arendt MD, Chen Y, Edwards D, Miller C, Meece M, Caffrey
+  J. 2001.
+\newblock A synthesis of water quality data from the national estuarine
+  research reserve's system-wide monitoring program.
+\newblock Technical report, MRD Contribution No. 459. The Cooperative Institute
+  for Coastal and Estuarine Environmental Technology. NOAA Grant Number:
+  NA97OR0209., Charleston, South Carolina.
 
 \end{thebibliography}
