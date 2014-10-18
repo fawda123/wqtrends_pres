@@ -11,8 +11,13 @@ library(maptools)
 library(reshape)
 library(TeachingDemos)
 library(raster)
+library(animation)
+
+source('R/funcs.R')
 
 cat('UWF presentation...','\n')
+
+
 
 
 

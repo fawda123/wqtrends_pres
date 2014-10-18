@@ -1,7 +1,7 @@
 \documentclass[serif]{beamer}
 \usetheme{Boadilla}
 \usepackage{graphicx}
-\usepackage[final]{animate}
+\usepackage[draft]{animate}
 \usepackage{breqn}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -451,6 +451,8 @@ Guidance may come in many forms - not just a number \\~\\
 Each provides an example of addressing the dual challenges of \alert{understanding nutrient dynamics} and \alert{developing quantitative tools} for trend evaluation 
 \end{frame}
 
+\section{Case 1: Tampa Bay}
+
 % tampa bay map, w/ inset
 <<tb_map, fig = F, results = 'hide', echo = F, eval = F>>=
 #wes cols
@@ -633,6 +635,7 @@ Questions of management concern -- Can we...
 \item ...improve our understanding of the nutrient-response paradigm in estuaries?
 \end{itemize}
 \end{frame}
+
 %%%%%%
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
 \onslide<+->
@@ -652,112 +655,263 @@ dat.in <- dat.in[dat.in$seg=='Hillsborough Bay',]
 
 row_exs <- 1:nrow(dat.in)
 
-library(animation)
-ani.options(outdir = getwd())
-saveLatex(
-  {
-
-  for(row_ex in row_exs){
-    
-    cat(row_ex, '\t')
-    
-    ref.in<-dat.in[row_ex,]
+pdf('fig/wtex.pdf', height = 3.75, width = 8, family = 'serif')
+for(row_ex in row_exs){
   
-    ##
-    #random year, month, load, one year, wts separated
-    ref.wt<-wt.fun(ref.in,dat.in,all=T)
-    yr.sub<-format(dat.in$date.f,'%Y')==ref.in$year
-    titles<-with(
-      ref.in,
-      c(as.character(month.name),year,substitute(italic(Sal[ff])~sal,list(sal=as.character(round(ref.in$sal.ref,2)))),
-      'All'),
-    )
-    
-    p1.dat<-data.frame(Month=dat.in$date.f[yr.sub],Wt=ref.wt[yr.sub,1])
-    p1<-ggplot(p1.dat,aes(x=Month,y=Wt)) + 
-      geom_line() + 
-      ggtitle(titles[[1]]) +
-      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
-      scale_x_date(labels=date_format("%b"),name=element_blank()) +
-      theme_mine()
-    
-    p2.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,2])
-    p2<-ggplot(p2.dat,aes(x=Date,y=Wt)) + 
-      geom_line() + 
-      scale_x_date(name=element_blank(),breaks = as.Date(range(dat.in$date.f)), labels = date_format("%Y-%m")) +
-      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
-      ggtitle(titles[[2]]) +
-      theme_mine()
-    
-    #p3 xlims
-    p3x0 <- paste0(as.numeric(ref.in$year)-2,'-01-01')
-    p3x1 <- paste0(as.numeric(ref.in$year)+2,'-01-01')
-    p3.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,3],
-      sal.ref=dat.in$sal.ref)
-    yint<-which(dat.in$sal.ref==ref.in$sal.ref)
-    p3<-ggplot(p3.dat,aes(x=Date,y=Wt)) + 
-      geom_line() + 
-      #geom_line(aes(y=sal.ref),col='red') + 
-      geom_hline(yintercept=p3.dat[yint,'sal.ref'],col='black',lwd=1.5,lty=2) +
-      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
-      scale_x_date(name=element_blank(),limits=as.Date(c(p3x0,p3x1)), breaks = as.Date(c(p3x0,p3x1)), labels = date_format("%Y-%m")) +
-      ggtitle(titles[[3]]) +
-      theme_mine()
-    
-    p4.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,1]*ref.wt[,2]*ref.wt[,3])
-    p4<-ggplot(p4.dat,aes(x=Date,y=Wt)) + 
-      geom_line() + 
-      scale_x_date(name=element_blank(),breaks = as.Date(range(dat.in$date.f)), labels = date_format("%Y-%m")) +
-      scale_y_continuous(name=element_blank(),limits=c(0,1)) +
-      ggtitle(titles[[4]]) + 
-      theme_mine()
-    
-    ##
-    #ggplot showing point size and color in relation to total weight
-    p.dat<-data.frame(
-      Date=dat.in$date.f,
-      Chla_ugl=dat.in$Chla_ugl,
-      sal.ref=dat.in$sal.ref,
-      month.wt=ref.wt[,1],
-      year.wt=ref.wt[,2],
-      sal.wt=ref.wt[,3],
-      all.wt=ref.wt[,1]*ref.wt[,2]*ref.wt[,3]
-    )
-    
-    title.val<-substitute(
-      mo~yr~italic(Sal[ff])~sal,
-      list(mo=as.character(ref.in$month.name),yr=paste0(ref.in$year,', '),sal=as.character(round(ref.in$sal.ref,2)))
-      )
-      
-    p.dat.plo<-ggplot(p.dat,aes(x=Date,y=sal.ref)) +
-      geom_point(aes(size=all.wt,colour=all.wt)) +
-      scale_y_continuous(limit=c(0,0.7),name=expression(italic(Sal[ff]))) +
-      scale_x_date(name=element_blank()) +
-      scale_size(range=c(4,12)) +
-      ggtitle(title.val) + 
-      theme_mine() +
-      scale_colour_gradientn(colours = pal(100)) +
-      theme(legend.position = 'none')
-    
-    grid.arrange(
-        p.dat.plo,
-        arrangeGrob(p1,p2,p3,p4,nrow=2,left=textGrob('Weights',rot=90)), ncol = 2
-      )
-  }}
-  ,  
-  ani.dev = 'pdf', ani.type='pdf', interval=0.1, ani.width = 7.5, ani.height = 4, family = 'serif',
-  ani.opts='controls',img.name='fig/wtex'
+  cat(row_ex, '\t')
+  
+  ref.in<-dat.in[row_ex,]
+
+  ##
+  #random year, month, load, one year, wts separated
+  ref.wt<-wt.fun(ref.in,dat.in,all=T)
+  yr.sub<-format(dat.in$date.f,'%Y')==ref.in$year
+  titles<-with(
+    ref.in,
+    c(as.character(month.name),year,substitute(italic(Sal[ff])~sal,list(sal=as.character(round(ref.in$sal.ref,2)))),
+    'All'),
   )
+  
+  p1.dat<-data.frame(Month=dat.in$date.f[yr.sub],Wt=ref.wt[yr.sub,1])
+  p1<-ggplot(p1.dat,aes(x=Month,y=Wt)) + 
+    geom_line() + 
+    ggtitle(titles[[1]]) +
+    scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+    scale_x_date(labels=date_format("%b"),name=element_blank()) +
+    theme_mine()
+  
+  p2.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,2])
+  p2<-ggplot(p2.dat,aes(x=Date,y=Wt)) + 
+    geom_line() + 
+    scale_x_date(name=element_blank(),breaks = as.Date(range(dat.in$date.f)), labels = date_format("%Y-%m")) +
+    scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+    ggtitle(titles[[2]]) +
+    theme_mine()
+  
+  #p3 xlims
+  p3x0 <- paste0(as.numeric(ref.in$year)-2,'-01-01')
+  p3x1 <- paste0(as.numeric(ref.in$year)+2,'-01-01')
+  p3.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,3],
+    sal.ref=dat.in$sal.ref)
+  yint<-which(dat.in$sal.ref==ref.in$sal.ref)
+  p3<-ggplot(p3.dat,aes(x=Date,y=Wt)) + 
+    geom_line() + 
+    #geom_line(aes(y=sal.ref),col='red') + 
+    geom_hline(yintercept=p3.dat[yint,'sal.ref'],col='black',lwd=1.5,lty=2) +
+    scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+    scale_x_date(name=element_blank(),limits=as.Date(c(p3x0,p3x1)), breaks = as.Date(c(p3x0,p3x1)), labels = date_format("%Y-%m")) +
+    ggtitle(titles[[3]]) +
+    theme_mine()
+  
+  p4.dat<-data.frame(Date=dat.in$date.f,Wt=ref.wt[,1]*ref.wt[,2]*ref.wt[,3])
+  p4<-ggplot(p4.dat,aes(x=Date,y=Wt)) + 
+    geom_line() + 
+    scale_x_date(name=element_blank(),breaks = as.Date(range(dat.in$date.f)), labels = date_format("%Y-%m")) +
+    scale_y_continuous(name=element_blank(),limits=c(0,1)) +
+    ggtitle(titles[[4]]) + 
+    theme_mine()
+  
+  ##
+  #ggplot showing point size and color in relation to total weight
+  p.dat<-data.frame(
+    Date=dat.in$date.f,
+    Chla_ugl=dat.in$Chla_ugl,
+    sal.ref=dat.in$sal.ref,
+    month.wt=ref.wt[,1],
+    year.wt=ref.wt[,2],
+    sal.wt=ref.wt[,3],
+    all.wt=ref.wt[,1]*ref.wt[,2]*ref.wt[,3]
+  )
+  
+  title.val<-substitute(
+    mo~yr~italic(Sal[ff])~sal,
+    list(mo=as.character(ref.in$month.name),yr=paste0(ref.in$year,', '),sal=as.character(round(ref.in$sal.ref,2)))
+    )
+    
+  p.dat.plo<-ggplot(p.dat,aes(x=Date,y=sal.ref)) +
+    geom_point(aes(size=all.wt,colour=all.wt)) +
+    scale_y_continuous(limit=c(0,0.7),name=expression(italic(Sal[ff]))) +
+    scale_x_date(name=element_blank()) +
+    scale_size(range=c(4,12)) +
+    ggtitle(title.val) + 
+    theme_mine() +
+    scale_colour_gradientn(colours = pal(100)) +
+    theme(legend.position = 'none')
+  
+  grid.arrange(
+      p.dat.plo,
+      arrangeGrob(p1,p2,p3,p4,nrow=2,left=textGrob('Weights',rot=90)), ncol = 2
+    )
+}
+
+dev.off()
 @
 
 %%%%%%
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+How does weighted regression work?
 \begin{center}
 \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
 \end{center}
 \end{frame}
 
 %%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+This gives us improved predictions of chlorophyll dynamics...
+<</predvals, echo = F, message = F, fig.width = 8.5, fig.height = 4, fig.cap = 'Predicted and observed monthly chlorophyll by segment.', out.width = '\\linewidth'>>=
+
+load('data/epc_est_act.RData')
+
+#y axis label for plots
+ylabs<-expression(paste('Chloropyhll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
+
+p1 <- ggplot(epc.est,aes(x=dec.time)) + 
+  geom_point(aes(y=exp(Chla_ugl)),alpha=0.7) +
+  geom_line(aes(y=bt.md),colour=pal(num.cols)[1],alpha=0.9, size=1) +
+  scale_y_continuous(ylabs) +
+  facet_wrap(~seg,nrow=2,ncol=2,scales='free_y') +
+  scale_x_continuous(
+    breaks=seq(1975,2010,by=5),
+    name=element_blank()
+    ) +
+  theme(
+    legend.position = 'none'
+    )
+
+print(p1)
+
+@
+\end{frame}
+
+<<hill, eval = F, echo = F, cache = T>>=
+load('data/salwt_grd.RData')
+load('data/epc_est.RData')
+
+to.plo <- sal.grd
+labs <- c('January', 'February', 'March', 'April', 'May', 'June', 'July', 
+  'August', 'September', 'October', 'November', 'December')
+to.plo$month.name <- factor(to.plo$month.num, labels = labs)
+
+#min, max sal.ref vals to plot....
+lim.vals<- ddply(
+  epc.est, 
+  .variable = c('seg', 'month.num'), 
+  .fun = function(x){
+    Low <- quantile(x$sal.ref, 0.05)
+    High <- quantile(x$sal.ref, 0.95)
+    data.frame(Low, High)
+    }
+  )
+lim.vals$month.name <- factor(lim.vals$month.num, labels = labs)
+
+# months to sub
+month.sub <- 'July'
+to.plo <- to.plo[to.plo$month.name == month.sub, ]
+lim.vals <- lim.vals[lim.vals$month.name == month.sub, ]
+
+# constrain plots to quants
+to.plo <- merge(to.plo, lim.vals, by = c('seg'), all.x = T)
+sel.vec <- with(to.plo, 
+  sal.grid >= Low &
+  sal.grid <= High
+  )
+to.plo <- to.plo[sel.vec, ]
+
+to.plo <- to.plo[to.plo$seg == 'Hillsborough Bay', ]
+
+#y axis label for plots
+ylabs<-expression(paste('Chloropyhll-',italic(a),' (',italic('\u03bc'),'g ',L^-1,')'))
+
+p1 <- ggplot(to.plo, aes(x = sal.grid, y = bt.md, group = dec.time, 
+    colour = dec.time)) + 
+  geom_line(size = 1) + 
+  facet_wrap(~seg, scales = 'free', ncol = 4) + 
+  scale_y_continuous(ylabs) +
+  scale_x_continuous(name=expression(italic(Sal[ff]))) +
+  theme_mine() +
+  theme(legend.position = 'bottom') +
+  scale_colour_gradientn('Year', colours = pal(5))
+
+pdf('fig/hill.pdf', width = 4, height =3.5, family = 'serif')
+print(p1)
+dev.off()
+@
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+Because the model is dynamic, we have parameters describing the relationship of chlorophyll with other factors specific to different time periods \\~\\
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/hill.pdf}}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{itemize}
+\item Early period (blue) - point-sources
+\item Late period (red) - non-point sources
+\item Chlorophyll shows increasing response to freshwater input in recent years
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\onslide<+->
+What does this mean for Tampa Bay?\\~\\
+\begin{itemize}
+\item Predictions followed observed chlorophyll -- but increased clarity in the description
+\item More detailed evaluation of trends allows greater insight into drivers of change\\~\\
+\end{itemize}
+\onslide<+->
+The model parameters show us a picture...
+\centerline{\includegraphics[width = \textwidth]{fig/title_plo.pdf}}
+\end{frame}
+
+\section{Case 2: Seagrass and water quality}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\begin{center}
+Seagrass have long been considered sentinels of water quality \\~\\
+\centerline{\includegraphics[width = 0.7\textwidth]{fig/sg_pic.png}}
+\vspace{0.1in}
+Seagrass provide numerous benefits - healthy seagrass, healthy estuary
+\end{center}
+\vfill
+\tiny
+\hfill Credit: \href{https://www.flickr.com/photos/swimvixen2/3581613875/in/photostream/}{flickr.com/photos/swimvixen2}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\onslide<+->
+The maximum depth of colonization is a useful proxy for trophic state \\~\\
+Often used as a basis for establishing nutrient criteria \\~\\
+\onslide<+->
+\alert{Problem 1:} No consensus on the best way to measure depth of colonization\\~\\
+\alert{Problem 2:} Plenty of data are available but standardized techniques have not been developed
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\onslide<+->
+\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization that can be universally applied (if FL is our universe)
+\begin{columns}
+\begin{column}{0.5\textwidth}
+<<>>=
+segs <- readShapeSpatial('data/segs.shp')
+state <- readShapespatial('data/FL_state.shp')
+
+
+@
+\end{column}
+\begin{column}{0.5\textwidth}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\section{References}
 \begin{frame}[allowframebreaks]{\textbf{References}}
 \tiny
 \setbeamertemplate{bibliography item}{}

@@ -50,7 +50,7 @@
 \usepackage{alltt}
 \usetheme{Boadilla}
 \usepackage{graphicx}
-\usepackage[final]{animate}
+\usepackage[draft]{animate}
 \usepackage{breqn}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -318,6 +318,8 @@ Guidance may come in many forms - not just a number \\~\\
 Each provides an example of addressing the dual challenges of \alert{understanding nutrient dynamics} and \alert{developing quantitative tools} for trend evaluation 
 \end{frame}
 
+\section{Case 1: Tampa Bay}
+
 % tampa bay map, w/ inset
 
 
@@ -399,6 +401,7 @@ Questions of management concern -- Can we...
 \item ...improve our understanding of the nutrient-response paradigm in estuaries?
 \end{itemize}
 \end{frame}
+
 %%%%%%
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
 \onslide<+->
@@ -414,12 +417,95 @@ Based on the idea that pollution concentration is a function of \alert{time}, \a
 
 %%%%%%
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+How does weighted regression work?
 \begin{center}
 \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
 \end{center}
 \end{frame}
 
 %%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+This gives us improved predictions of chlorophyll dynamics...
+\begin{figure}[!ht]
+
+
+{\centering \includegraphics[width=\linewidth]{fig//predvals} 
+
+}
+
+\caption[Predicted and observed monthly chlorophyll by segment]{Predicted and observed monthly chlorophyll by segment.\label{fig:/predvals}}
+\end{figure}
+
+
+\end{frame}
+
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+Because the model is dynamic, we have parameters describing the relationship of chlorophyll with other factors specific to different time periods \\~\\
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/hill.pdf}}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{itemize}
+\item Early period (blue) - point-sources
+\item Late period (red) - non-point sources
+\item Chlorophyll shows increasing response to freshwater input in recent years
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
+\onslide<+->
+What does this mean for Tampa Bay?\\~\\
+\begin{itemize}
+\item Predictions followed observed chlorophyll -- but increased clarity in the description
+\item More detailed evaluation of trends allows greater insight into drivers of change\\~\\
+\end{itemize}
+\onslide<+->
+The model parameters show us a picture...
+\centerline{\includegraphics[width = \textwidth]{fig/title_plo.pdf}}
+\end{frame}
+
+\section{Case 2: Seagrass and water quality}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\begin{center}
+Seagrass has long been considered a sentinel of water quality \\~\\
+\centerline{\includegraphics[width = 0.7\textwidth]{fig/sg_pic.png}}
+\vspace{0.1in}
+Seagrass provide numerous benefits - healthy seagrass, healthy estuary
+\end{center}
+\vfill
+\tiny
+\hfill Credit: \href{https://www.flickr.com/photos/swimvixen2/3581613875/in/photostream/}{flickr.com/photos/swimvixen2}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\onslide<+->
+The maximum depth of colonization is a useful proxy for trophic state \\~\\
+Often used as a basis for establishing nutrient criteria \\~\\
+\onslide<+->
+\alert{Problem 1:} No consensus on the best way to measure depth of colonization\\~\\
+\alert{Problem 2:} Plenty of data are available but standardized techniques have not been developed
+\onslide<+->
+% \centerline{\includegraphics[width = \textwidth]{fig/sg_pic.png}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\onslide<+->
+\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization that can be universally applied (if FL is our universe)
+\end{frame}
+
+%%%%%%
+\section{References}
 \begin{frame}[allowframebreaks]{\textbf{References}}
 \tiny
 \setbeamertemplate{bibliography item}{}
