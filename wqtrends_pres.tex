@@ -50,7 +50,7 @@
 \usepackage{alltt}
 \usetheme{Boadilla}
 \usepackage{graphicx}
-\usepackage[draft]{animate}
+\usepackage[final]{animate}
 \usepackage{breqn}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -419,7 +419,7 @@ Based on the idea that pollution concentration is a function of \alert{time}, \a
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
 How does weighted regression work?
 \begin{center}
-\animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
+% \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
 \end{center}
 \end{frame}
 
@@ -476,7 +476,7 @@ The model parameters show us a picture...
 %%%%%%
 \begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
 \begin{center}
-Seagrass has long been considered a sentinel of water quality \\~\\
+Seagrass have long been considered sentinels of water quality \\~\\
 \centerline{\includegraphics[width = 0.7\textwidth]{fig/sg_pic.png}}
 \vspace{0.1in}
 Seagrass provide numerous benefits - healthy seagrass, healthy estuary
@@ -494,14 +494,151 @@ Often used as a basis for establishing nutrient criteria \\~\\
 \onslide<+->
 \alert{Problem 1:} No consensus on the best way to measure depth of colonization\\~\\
 \alert{Problem 2:} Plenty of data are available but standardized techniques have not been developed
-\onslide<+->
-% \centerline{\includegraphics[width = \textwidth]{fig/sg_pic.png}}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
 \onslide<+->
-\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization that can be universally applied (if FL is our universe)
+\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization that can be universally applied
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{fig//segmap} 
+
+}
+
+
+
+\end{knitrout}
+\end{column}
+\begin{column}{0.45\textwidth}
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/Charlotte_Estuary_Segments.jpg}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\onslide<+->
+How can we estimate depth of colonization? \\~\\
+\begin{columns}[T]
+\onslide<+->
+\begin{column}{0.32\textwidth}
+Pick a segment\\~\\
+\centerline{\includegraphics[width = 0.9\textwidth]{fig/map820.png}}
+\end{column}
+\onslide<+->
+\begin{column}{0.32\textwidth}
+Get seagrass coverage
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{fig//segsg} 
+
+}
+
+
+
+\end{knitrout}
+\end{column}
+\onslide<+->
+\begin{column}{0.32\textwidth}
+Get depth points\\~\\
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{fig//segpt} 
+
+}
+
+
+
+\end{knitrout}
+\end{column}
+\end{columns}
+\onslide<+->
+\vspace{0.15in}
+All data are publically available
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+Plot the distribution of seagrass by increasing depth\\~\\
+\centerline{\includegraphics[width = 0.65\textwidth]{fig/Hagy_est.png}}
+\vfill
+\tiny
+\hfill Credit: [Hagy et al., in prep]
+\end{frame}
+
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+We can get an estimate of seagrass depth of colonization for each segment in Florida \scriptsize [Hagy et al., in prep]
+\vspace{-0.25in}
+\centerline{\includegraphics[width = 0.55\textwidth]{fig/sgdepthall.pdf}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+\onslide<+->
+This approach works if the segment is an appropriate spatial unit to characterize seagrass...
+\begin{columns}[T]
+\onslide<+->
+\begin{column}{0.45\textwidth}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{fig//docfail1} 
+
+}
+
+
+
+\end{knitrout}
+\end{column}
+\onslide<+->
+\begin{column}{0.45\textwidth}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{fig//docfail2} 
+
+}
+
+
+
+\end{knitrout}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+If segment is not appropriate, can we define a spatial boundary for estimating seagrass depth of colonization?
+\begin{center}
+\animategraphics[controls,width=0.95\linewidth]{12}{fig/radred}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+This can be repeated for a number of points until we get estimates that make sense
+\begin{center}
+\animategraphics[controls,width=0.95\linewidth]{12}{fig/radred2}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+Benefits of the approach:
+\begin{itemize}
+\item
+\end{itemize}
 \end{frame}
 
 %%%%%%

@@ -12,6 +12,8 @@ library(reshape)
 library(TeachingDemos)
 library(raster)
 library(animation)
+library(ggmap)
+library(rgeos)
 
 source('R/funcs.R')
 
