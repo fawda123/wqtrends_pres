@@ -50,7 +50,7 @@
 \usepackage{alltt}
 \usetheme{Boadilla}
 \usepackage{graphicx}
-\usepackage[final]{animate}
+\usepackage[draft]{animate}
 \usepackage{breqn}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -635,10 +635,104 @@ This can be repeated for a number of points until we get estimates that make sen
 
 %%%%%%
 \begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
-Benefits of the approach:
+\onslide<+->
+Benefits of the approach: \\~\\
 \begin{itemize}
-\item
+\item The spatial unit for any estimate of seagrass growth limit is problem-specific \\~\\
+\item Allows for a `compliance-point' approach (saves time/money) \\~\\
+\item Increased understanding of seagrass growth patterns - natural and anthropogenic drivers \\~\\
 \end{itemize}
+\onslide<+->
+Lots to be done...
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
+Development widget online: \href{https://beckmw.shinyapps.io/sg_depth/}{https://beckmw.shinyapps.io/sg_depth/}
+\centerline{\includegraphics[width = 0.75\textwidth]{fig/widget.png}}
+\end{frame}
+
+\section{Case 3: Open-source tools}
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\onslide<+->
+Progress in science is incremental\\~\\
+This work depended on the past work of others\\~\\
+The ability to reproduce methods will always be a challenge...\\~\\
+\onslide<+->
+...digital tools have proliferated to \alert{facilitate sharing}\\~\\
+\begin{columns}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/RStudio.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/knit-logo.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/octocat.png}}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+Returning back to the System Wide Monitoring Program...\\~\\
+\centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\onslide<+->
+The SWMP database and others like it represent incredible opportunities to further our knowledge of natural systems...\\~\\
+...including the effects of eutrophication \\~\\
+\onslide<+->
+\alert{Problem:} These data are numerous and not easily compared\\~\\
+\alert{Solution:} Develop open-source tools that address the challenges of large-scale comparative analyses with continuous monitoring data\\~\\
+\onslide<+->
+The benefits include:
+\begin{itemize}
+\item Free for use by anyone
+\item Free to collaborate
+\item Facilitation of analysis with `under-the-hood' functionality
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\alert{SWMPr} is a freely available package for use with R \\~\\
+Designed to facilitate the analysis of SWMP data by providing functions that...\\~\\
+\begin{itemize}
+\item \alert{Retrieve} SWMP data for any site and date combination \\~\\ 
+\item \alert{Organize} the data using standard pre-processing techniques \\~\\
+\item \alert{Analyze} the data using a suite of exploratory and graphical analysis tools \\~\\
+\end{itemize}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+What we've done so far... comparative analysis of ecosystem metabolism 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: argument 1 is not a vector}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: replacement has 0 rows, data has 452}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: object 'sort.val' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: replacement has 0 rows, data has 452}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: At least one layer must contain all variables used for facetting}}\end{kframe}
+\end{knitrout}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+
 \end{frame}
 
 %%%%%%

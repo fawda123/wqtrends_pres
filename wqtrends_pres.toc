@@ -2,4 +2,5 @@
 \beamer@sectionintoc {1}{Background}{2}{0}{1}
 \beamer@sectionintoc {2}{Case 1: Tampa Bay}{34}{0}{2}
 \beamer@sectionintoc {3}{Case 2: Seagrass and water quality}{48}{0}{3}
-\beamer@sectionintoc {4}{References}{65}{0}{4}
+\beamer@sectionintoc {4}{Case 3: Open-source tools}{67}{0}{4}
+\beamer@sectionintoc {5}{References}{76}{0}{5}
