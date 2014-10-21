@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  20 OCT 2014 18:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.29)  21 OCT 2014 14:01
 entering extended mode
 **wqtrends_pres.tex
 (M:\presentations\wqtrends_pres\wqtrends_pres.tex
@@ -1442,7 +1442,7 @@ Package caption Info: End \AtBeginDocument code.
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 97.
 
-<fig/title_plo.pdf, id=53, 867.24pt x 252.945pt>
+<fig/title_plo.pdf, id=57, 867.24pt x 252.945pt>
 File: fig/title_plo.pdf Graphic file (type pdf)
  <use fig/title_plo.pdf>
 Package pdftex.def Info: fig/title_plo.pdf used on input line 108.
@@ -1452,7 +1452,7 @@ Package pdftex.def Info: fig/title_plo.pdf used on input line 108.
 Class beamer Warning: Frame text is shrunk by a factor of 5.5252 percent instea
 d of 0 percent on input line 108.
 
-<fig/back_tmp.pdf, id=54, 505.89pt x 505.89pt>
+<fig/back_tmp.pdf, id=58, 505.89pt x 505.89pt>
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
 Package pdftex.def Info: fig/back_tmp.pdf used on input line 108.
@@ -1533,7 +1533,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 150.
  [10
 
 ]
-<fig/redtide.png, id=179, 673.76718pt x 331.2375pt>
+<fig/redtide.png, id=183, 673.76718pt x 331.2375pt>
 File: fig/redtide.png Graphic file (type png)
  <use fig/redtide.png>
 Package pdftex.def Info: fig/redtide.png used on input line 155.
@@ -1561,13 +1561,13 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 171.
  [13
 
 ]
-<fig/irl_map.png, id=200, 383.18156pt x 478.03593pt>
+<fig/irl_map.png, id=204, 383.18156pt x 478.03593pt>
 File: fig/irl_map.png Graphic file (type png)
  <use fig/irl_map.png>
 Package pdftex.def Info: fig/irl_map.png used on input line 185.
 (pdftex.def)             Requested size: 138.6277pt x 172.94623pt.
 
-<fig/irl_reg.png, id=201, 423.83344pt x 513.41812pt>
+<fig/irl_reg.png, id=205, 423.83344pt x 513.41812pt>
 File: fig/irl_reg.png Graphic file (type png)
  <use fig/irl_reg.png>
 Package pdftex.def Info: fig/irl_reg.png used on input line 185.
@@ -1588,7 +1588,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 197.
  [15
 
 ]
-<fig/sabine.png, id=217, 1734.48pt x 1041.491pt>
+<fig/sabine.png, id=221, 1734.48pt x 1041.491pt>
 File: fig/sabine.png Graphic file (type png)
  <use fig/sabine.png>
 Package pdftex.def Info: fig/sabine.png used on input line 203.
@@ -1616,7 +1616,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 232.
  [18
 
 ]
-<fig/ggchl_1.pdf, id=241, 397.485pt x 325.215pt>
+<fig/ggchl_1.pdf, id=245, 397.485pt x 325.215pt>
 File: fig/ggchl_1.pdf Graphic file (type pdf)
  <use fig/ggchl_1.pdf>
 Package pdftex.def Info: fig/ggchl_1.pdf used on input line 258.
@@ -1631,7 +1631,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 258.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<fig/wbid_map_1.pdf, id=242, 505.89pt x 505.89pt>
+<fig/wbid_map_1.pdf, id=246, 505.89pt x 505.89pt>
 File: fig/wbid_map_1.pdf Graphic file (type pdf)
  <use fig/wbid_map_1.pdf>
 Package pdftex.def Info: fig/wbid_map_1.pdf used on input line 258.
@@ -1645,13 +1645,13 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 258.
 
  <M:/presentations/wqtrends_pres/fig/ggchl_1.pdf> <M:/presentations/wqtrends_pr
 es/fig/wbid_map_1.pdf>]
-<fig/ggchl_2.pdf, id=265, 397.485pt x 325.215pt>
+<fig/ggchl_2.pdf, id=269, 397.485pt x 325.215pt>
 File: fig/ggchl_2.pdf Graphic file (type pdf)
  <use fig/ggchl_2.pdf>
 Package pdftex.def Info: fig/ggchl_2.pdf used on input line 258.
 (pdftex.def)             Requested size: 181.41609pt x 159.2069pt.
 
-<fig/wbid_map_2.pdf, id=266, 505.89pt x 505.89pt>
+<fig/wbid_map_2.pdf, id=270, 505.89pt x 505.89pt>
 File: fig/wbid_map_2.pdf Graphic file (type pdf)
  <use fig/wbid_map_2.pdf>
 Package pdftex.def Info: fig/wbid_map_2.pdf used on input line 258.
@@ -1665,13 +1665,13 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 258.
 
  <M:/presentations/wqtrends_pres/fig/ggchl_2.pdf> <M:/presentations/wqtrends_pr
 es/fig/wbid_map_2.pdf>]
-<fig/ggchl_3.pdf, id=288, 397.485pt x 325.215pt>
+<fig/ggchl_3.pdf, id=292, 397.485pt x 325.215pt>
 File: fig/ggchl_3.pdf Graphic file (type pdf)
  <use fig/ggchl_3.pdf>
 Package pdftex.def Info: fig/ggchl_3.pdf used on input line 258.
 (pdftex.def)             Requested size: 181.41609pt x 159.2069pt.
 
-<fig/wbid_map_3.pdf, id=289, 505.89pt x 505.89pt>
+<fig/wbid_map_3.pdf, id=293, 505.89pt x 505.89pt>
 File: fig/wbid_map_3.pdf Graphic file (type pdf)
  <use fig/wbid_map_3.pdf>
 Package pdftex.def Info: fig/wbid_map_3.pdf used on input line 258.
@@ -1685,13 +1685,13 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 258.
 
  <M:/presentations/wqtrends_pres/fig/ggchl_3.pdf> <M:/presentations/wqtrends_pr
 es/fig/wbid_map_3.pdf>]
-<fig/ggchl_4.pdf, id=311, 397.485pt x 325.215pt>
+<fig/ggchl_4.pdf, id=315, 397.485pt x 325.215pt>
 File: fig/ggchl_4.pdf Graphic file (type pdf)
  <use fig/ggchl_4.pdf>
 Package pdftex.def Info: fig/ggchl_4.pdf used on input line 258.
 (pdftex.def)             Requested size: 181.41609pt x 159.2069pt.
 
-<fig/wbid_map_4.pdf, id=312, 505.89pt x 505.89pt>
+<fig/wbid_map_4.pdf, id=316, 505.89pt x 505.89pt>
 File: fig/wbid_map_4.pdf Graphic file (type pdf)
  <use fig/wbid_map_4.pdf>
 Package pdftex.def Info: fig/wbid_map_4.pdf used on input line 258.
@@ -1705,13 +1705,13 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 258.
 
  <M:/presentations/wqtrends_pres/fig/ggchl_4.pdf> <M:/presentations/wqtrends_pr
 es/fig/wbid_map_4.pdf>]
-<fig/ggchl_5.pdf, id=334, 397.485pt x 325.215pt>
+<fig/ggchl_5.pdf, id=338, 397.485pt x 325.215pt>
 File: fig/ggchl_5.pdf Graphic file (type pdf)
  <use fig/ggchl_5.pdf>
 Package pdftex.def Info: fig/ggchl_5.pdf used on input line 258.
 (pdftex.def)             Requested size: 181.41609pt x 159.2069pt.
 
-<fig/wbid_map_5.pdf, id=335, 505.89pt x 505.89pt>
+<fig/wbid_map_5.pdf, id=339, 505.89pt x 505.89pt>
 File: fig/wbid_map_5.pdf Graphic file (type pdf)
  <use fig/wbid_map_5.pdf>
 Package pdftex.def Info: fig/wbid_map_5.pdf used on input line 258.
@@ -1740,7 +1740,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 278.
  [25
 
 ]
-<fig/NERRS_locations.png, id=373, 725.71124pt x 446.41782pt>
+<fig/NERRS_locations.png, id=377, 725.71124pt x 446.41782pt>
 File: fig/NERRS_locations.png Graphic file (type png)
 
 <use fig/NERRS_locations.png>
@@ -1809,7 +1809,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 319.
  [33
 
 ]
-<fig/tb_map.pdf, id=441, 469.755pt x 469.755pt>
+<fig/tb_map.pdf, id=445, 469.755pt x 469.755pt>
 File: fig/tb_map.pdf Graphic file (type pdf)
  <use fig/tb_map.pdf>
 Package pdftex.def Info: fig/tb_map.pdf used on input line 341.
@@ -1822,7 +1822,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 341.
  [34
 
  <M:/presentations/wqtrends_pres/fig/tb_map.pdf>]
-<fig/annual_chl.pdf, id=458, 578.16pt x 325.215pt>
+<fig/annual_chl.pdf, id=462, 578.16pt x 325.215pt>
 File: fig/annual_chl.pdf Graphic file (type pdf)
  <use fig/annual_chl.pdf>
 Package pdftex.def Info: fig/annual_chl.pdf used on input line 356.
@@ -1837,7 +1837,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 356.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [35
 
- <M:/presentations/wqtrends_pres/fig/annual_chl.pdf>] <fig/salmoyr.pdf, id=477,
+ <M:/presentations/wqtrends_pres/fig/annual_chl.pdf>] <fig/salmoyr.pdf, id=481,
  page=1, 274.02374pt x 230.8625pt>
 File: fig/salmoyr.pdf Graphic file (type pdf)
 
@@ -1845,7 +1845,7 @@ File: fig/salmoyr.pdf Graphic file (type pdf)
 Package pdftex.def Info: fig/salmoyr.pdf, page1 used on input line 385.
 (pdftex.def)             Requested size: 157.45813pt x 124.70282pt.
 
-<fig/salmoyr.pdf, id=479, page=2, 274.02374pt x 230.8625pt>
+<fig/salmoyr.pdf, id=483, page=2, 274.02374pt x 230.8625pt>
 File: fig/salmoyr.pdf Graphic file (type pdf)
 
 <use fig/salmoyr.pdf, page 2>
@@ -1906,7 +1906,93 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 414.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [42
 
-]
+] <M:/presentations/wqtrends_pres/fig/wtex.pdf> <1> <M:/presentations/wqtrends_
+pres/fig/wtex.pdf>
+<2> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <3> <M:/presentations/wqtrend
+s_pres/fig/wtex.pdf> <4> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <5> <M:/
+presentations/wqtrends_pres/fig/wtex.pdf> <6> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <7> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <8> <M:/presenta
+tions/wqtrends_pres/fig/wtex.pdf> <9> <M:/presentations/wqtrends_pres/fig/wtex.
+pdf> <10> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <11> <M:/presentations/
+wqtrends_pres/fig/wtex.pdf> <12> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<13> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <14> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <15> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <16> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <17> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <18> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <19> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <20> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <21> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <22> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <23> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <24> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <25> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <26> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <27> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <28> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <29> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<30> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <31> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <32> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <33> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <34> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <35> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <36> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <37> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <38> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <39> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <40> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <41> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <42> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <43> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <44> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <45> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <46> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<47> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <48> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <49> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <50> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <51> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <52> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <53> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <54> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <55> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <56> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <57> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <58> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <59> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <60> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <61> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <62> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <63> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<64> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <65> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <66> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <67> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <68> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <69> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <70> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <71> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <72> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <73> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <74> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <75> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <76> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <77> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <78> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <79> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <80> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<81> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <82> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <83> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <84> 
+<M:/presentations/wqtrends_pres/fig/wtex.pdf> <85> <M:/presentations/wqtrends_p
+res/fig/wtex.pdf> <86> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <87> <M:/p
+resentations/wqtrends_pres/fig/wtex.pdf> <88> <M:/presentations/wqtrends_pres/f
+ig/wtex.pdf> <89> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <90> <M:/presen
+tations/wqtrends_pres/fig/wtex.pdf> <91> <M:/presentations/wqtrends_pres/fig/wt
+ex.pdf> <92> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <93> <M:/presentatio
+ns/wqtrends_pres/fig/wtex.pdf> <94> <M:/presentations/wqtrends_pres/fig/wtex.pd
+f> <95> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <96> <M:/presentations/wq
+trends_pres/fig/wtex.pdf> <97> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<98> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <99> <M:/presentations/wqtre
+nds_pres/fig/wtex.pdf> <100> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<101> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <102> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <103> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<104> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <105> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <106> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<107> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <108> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <109> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<110> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <111> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <112> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<113> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <114> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <115> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<116> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <117> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <118> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<119> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <120> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <121> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<122> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <123> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <124> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<125> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <126> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <127> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<128> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <129> <M:/presentations/wqt
+rends_pres/fig/wtex.pdf> <130> <M:/presentations/wqtrends_pres/fig/wtex.pdf>
+<131> <M:/presentations/wqtrends_pres/fig/wtex.pdf> <132>
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
@@ -1914,7 +2000,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 424.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [43
 
-] <fig//predvals.pdf, id=566, 614.295pt x 289.08pt>
+] <fig//predvals.pdf, id=1399, 614.295pt x 289.08pt>
 File: fig//predvals.pdf Graphic file (type pdf)
 
 <use fig//predvals.pdf>
@@ -1926,8 +2012,8 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 440.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [44
 
- <M:/presentations/wqtrends_pres/fig//predvals.pdf>] <fig/hill.pdf, id=586, 289
-.08pt x 252.945pt>
+ <M:/presentations/wqtrends_pres/fig//predvals.pdf>] <fig/hill.pdf, id=1419, 28
+9.08pt x 252.945pt>
 File: fig/hill.pdf Graphic file (type pdf)
 
 <use fig/hill.pdf>
@@ -1963,7 +2049,7 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 472.
  [47
 
 ]
-<fig/sg_pic.png, id=617, 638.385pt x 337.26pt>
+<fig/sg_pic.png, id=1450, 638.385pt x 337.26pt>
 File: fig/sg_pic.png Graphic file (type png)
  <use fig/sg_pic.png>
 Package pdftex.def Info: fig/sg_pic.png used on input line 487.
@@ -1991,13 +2077,13 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 497.
  [50
 
 ]
-<fig//segmap.pdf, id=639, 289.08pt x 289.08pt>
+<fig//segmap.pdf, id=1472, 289.08pt x 289.08pt>
 File: fig//segmap.pdf Graphic file (type pdf)
  <use fig//segmap.pdf>
 Package pdftex.def Info: fig//segmap.pdf used on input line 520.
 (pdftex.def)             Requested size: 171.14764pt x 171.14679pt.
 
-<fig/Charlotte_Estuary_Segments.jpg, id=640, 469.755pt x 653.3208pt>
+<fig/Charlotte_Estuary_Segments.jpg, id=1473, 469.755pt x 653.3208pt>
 File: fig/Charlotte_Estuary_Segments.jpg Graphic file (type jpg)
 
 <use fig/Charlotte_Estuary_Segments.jpg>
@@ -2011,28 +2097,28 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 520.
  [51
 
  <M:/presentations/wqtrends_pres/fig//segmap.pdf> <M:/presentations/wqtrends_pr
-es/fig/Charlotte_Estuary_Segments.jpg>] <fig/map820.png, id=652, 482.0409pt x 5
-97.6729pt>
+es/fig/Charlotte_Estuary_Segments.jpg>] <fig/map820.png, id=1485, 482.0409pt x 
+597.6729pt>
 File: fig/map820.png Graphic file (type png)
 
 <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 564.
+Package pdftex.def Info: fig/map820.png used on input line 561.
 (pdftex.def)             Requested size: 98.58263pt x 122.22278pt.
- <fig//segsg.pdf, id=653, 289.08pt x 289.08pt>
+ <fig//segsg.pdf, id=1486, 289.08pt x 289.08pt>
 File: fig//segsg.pdf Graphic file (type pdf)
 
 <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 564.
+Package pdftex.def Info: fig//segsg.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
- <fig//segpt.pdf, id=654, 289.08pt x 289.08pt>
+ <fig//segpt.pdf, id=1487, 289.08pt x 289.08pt>
 File: fig//segpt.pdf Graphic file (type pdf)
 
 <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 564.
+Package pdftex.def Info: fig//segpt.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 561.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [52
 
@@ -2040,40 +2126,40 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
 s/fig//segsg.pdf> <M:/presentations/wqtrends_pres/fig//segpt.pdf>]
 File: fig/map820.png Graphic file (type png)
  <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 564.
+Package pdftex.def Info: fig/map820.png used on input line 561.
 (pdftex.def)             Requested size: 98.58263pt x 122.22278pt.
 File: fig//segsg.pdf Graphic file (type pdf)
  <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 564.
+Package pdftex.def Info: fig//segsg.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig//segpt.pdf Graphic file (type pdf)
 
 <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 564.
+Package pdftex.def Info: fig//segpt.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 561.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [53
 
 ]
 File: fig/map820.png Graphic file (type png)
  <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 564.
+Package pdftex.def Info: fig/map820.png used on input line 561.
 (pdftex.def)             Requested size: 98.58263pt x 122.22278pt.
 File: fig//segsg.pdf Graphic file (type pdf)
 
 <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 564.
+Package pdftex.def Info: fig//segsg.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig//segpt.pdf Graphic file (type pdf)
  <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 564.
+Package pdftex.def Info: fig//segpt.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 561.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [54
 
@@ -2081,194 +2167,227 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
 File: fig/map820.png Graphic file (type png)
 
 <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 564.
+Package pdftex.def Info: fig/map820.png used on input line 561.
 (pdftex.def)             Requested size: 98.58263pt x 122.22278pt.
 File: fig//segsg.pdf Graphic file (type pdf)
  <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 564.
+Package pdftex.def Info: fig//segsg.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig//segpt.pdf Graphic file (type pdf)
  <use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 564.
+Package pdftex.def Info: fig//segpt.pdf used on input line 561.
 (pdftex.def)             Requested size: 109.537pt x 109.53394pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 561.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [55
 
 ]
-File: fig/map820.png Graphic file (type png)
- <use fig/map820.png>
-Package pdftex.def Info: fig/map820.png used on input line 564.
-(pdftex.def)             Requested size: 98.58263pt x 122.22278pt.
-File: fig//segsg.pdf Graphic file (type pdf)
- <use fig//segsg.pdf>
-Package pdftex.def Info: fig//segsg.pdf used on input line 564.
-(pdftex.def)             Requested size: 109.537pt x 109.53394pt.
-File: fig//segpt.pdf Graphic file (type pdf)
-
-<use fig//segpt.pdf>
-Package pdftex.def Info: fig//segpt.pdf used on input line 564.
-(pdftex.def)             Requested size: 109.537pt x 109.53394pt.
-File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 564.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [56
-
-]
-<fig/Hagy_est.png, id=694, 424.9476pt x 333.8874pt>
+<fig/Hagy_est.png, id=1521, 424.9476pt x 333.8874pt>
 File: fig/Hagy_est.png Graphic file (type png)
  <use fig/Hagy_est.png>
-Package pdftex.def Info: fig/Hagy_est.png used on input line 573.
+Package pdftex.def Info: fig/Hagy_est.png used on input line 570.
 (pdftex.def)             Requested size: 222.48985pt x 174.8146pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 573.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 570.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [57
+ [56
 
  <M:/presentations/wqtrends_pres/fig/Hagy_est.png>]
-<fig/sgdepthall.pdf, id=702, 505.89pt x 505.89pt>
+<fig/sgdepthall.pdf, id=1529, 505.89pt x 505.89pt>
 File: fig/sgdepthall.pdf Graphic file (type pdf)
  <use fig/sgdepthall.pdf>
-Package pdftex.def Info: fig/sgdepthall.pdf used on input line 582.
+Package pdftex.def Info: fig/sgdepthall.pdf used on input line 579.
 (pdftex.def)             Requested size: 188.26346pt x 188.26477pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 582.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 579.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [58
+ [57
 
- <M:/presentations/wqtrends_pres/fig/sgdepthall.pdf>] <fig//docfail1.pdf, id=71
-8, 289.08pt x 289.08pt>
+ <M:/presentations/wqtrends_pres/fig/sgdepthall.pdf>] <fig//docfail1.pdf, id=15
+45, 289.08pt x 289.08pt>
 File: fig//docfail1.pdf Graphic file (type pdf)
  <use fig//docfail1.pdf>
-Package pdftex.def Info: fig//docfail1.pdf used on input line 616.
+Package pdftex.def Info: fig//docfail1.pdf used on input line 613.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 
-<fig//docfail2.pdf, id=719, 289.08pt x 289.08pt>
+<fig//docfail2.pdf, id=1546, 289.08pt x 289.08pt>
 File: fig//docfail2.pdf Graphic file (type pdf)
  <use fig//docfail2.pdf>
-Package pdftex.def Info: fig//docfail2.pdf used on input line 616.
+Package pdftex.def Info: fig//docfail2.pdf used on input line 613.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 616.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 613.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [59
+ [58
 
  <M:/presentations/wqtrends_pres/fig//docfail1.pdf> <M:/presentations/wqtrends_
 pres/fig//docfail2.pdf>]
 File: fig//docfail1.pdf Graphic file (type pdf)
  <use fig//docfail1.pdf>
-Package pdftex.def Info: fig//docfail1.pdf used on input line 616.
+Package pdftex.def Info: fig//docfail1.pdf used on input line 613.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig//docfail2.pdf Graphic file (type pdf)
 
 <use fig//docfail2.pdf>
-Package pdftex.def Info: fig//docfail2.pdf used on input line 616.
+Package pdftex.def Info: fig//docfail2.pdf used on input line 613.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 616.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 613.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [60
+ [59
 
 ]
 File: fig//docfail1.pdf Graphic file (type pdf)
  <use fig//docfail1.pdf>
-Package pdftex.def Info: fig//docfail1.pdf used on input line 616.
+Package pdftex.def Info: fig//docfail1.pdf used on input line 613.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig//docfail2.pdf Graphic file (type pdf)
 
 <use fig//docfail2.pdf>
-Package pdftex.def Info: fig//docfail2.pdf used on input line 616.
+Package pdftex.def Info: fig//docfail2.pdf used on input line 613.
 (pdftex.def)             Requested size: 154.03183pt x 154.0321pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 616.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 613.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [60
+
+] <M:/presentations/wqtrends_pres/fig/radred.pdf> <1> <M:/presentations/wqtrend
+s_pres/fig/radred.pdf> <2> <M:/presentations/wqtrends_pres/fig/radred.pdf> <3> 
+<M:/presentations/wqtrends_pres/fig/radred.pdf> <4> <M:/presentations/wqtrends_
+pres/fig/radred.pdf> <5> <M:/presentations/wqtrends_pres/fig/radred.pdf> <6> <M
+:/presentations/wqtrends_pres/fig/radred.pdf> <7> <M:/presentations/wqtrends_pr
+es/fig/radred.pdf> <8> <M:/presentations/wqtrends_pres/fig/radred.pdf> <9> <M:/
+presentations/wqtrends_pres/fig/radred.pdf> <10> <M:/presentations/wqtrends_pre
+s/fig/radred.pdf> <11> <M:/presentations/wqtrends_pres/fig/radred.pdf> <12> <M:
+/presentations/wqtrends_pres/fig/radred.pdf> <13> <M:/presentations/wqtrends_pr
+es/fig/radred.pdf> <14> <M:/presentations/wqtrends_pres/fig/radred.pdf> <15> <M
+:/presentations/wqtrends_pres/fig/radred.pdf> <16> <M:/presentations/wqtrends_p
+res/fig/radred.pdf> <17> <M:/presentations/wqtrends_pres/fig/radred.pdf> <18> <
+M:/presentations/wqtrends_pres/fig/radred.pdf> <19> <M:/presentations/wqtrends_
+pres/fig/radred.pdf> <20> <M:/presentations/wqtrends_pres/fig/radred.pdf> <21> 
+<M:/presentations/wqtrends_pres/fig/radred.pdf> <22> <M:/presentations/wqtrends
+_pres/fig/radred.pdf> <23> <M:/presentations/wqtrends_pres/fig/radred.pdf> <24>
+ <M:/presentations/wqtrends_pres/fig/radred.pdf> <25> <M:/presentations/wqtrend
+s_pres/fig/radred.pdf> <26> <M:/presentations/wqtrends_pres/fig/radred.pdf> <27
+> <M:/presentations/wqtrends_pres/fig/radred.pdf> <28> <M:/presentations/wqtren
+ds_pres/fig/radred.pdf> <29> <M:/presentations/wqtrends_pres/fig/radred.pdf> <3
+0> <M:/presentations/wqtrends_pres/fig/radred.pdf> <31> <M:/presentations/wqtre
+nds_pres/fig/radred.pdf>
+<32> <M:/presentations/wqtrends_pres/fig/radred.pdf> <33> <M:/presentations/wqt
+rends_pres/fig/radred.pdf> <34> <M:/presentations/wqtrends_pres/fig/radred.pdf>
+<35> <M:/presentations/wqtrends_pres/fig/radred.pdf> <36> <M:/presentations/wqt
+rends_pres/fig/radred.pdf> <37> <M:/presentations/wqtrends_pres/fig/radred.pdf>
+<38> <M:/presentations/wqtrends_pres/fig/radred.pdf> <39> <M:/presentations/wqt
+rends_pres/fig/radred.pdf> <40>
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 622.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [61
 
-]
+] <M:/presentations/wqtrends_pres/fig/radred2.pdf> <1> <M:/presentations/wqtren
+ds_pres/fig/radred2.pdf> <2> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <
+3> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <4> <M:/presentations/wqtre
+nds_pres/fig/radred2.pdf> <5> <M:/presentations/wqtrends_pres/fig/radred2.pdf> 
+<6> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <7> <M:/presentations/wqtr
+ends_pres/fig/radred2.pdf> <8> <M:/presentations/wqtrends_pres/fig/radred2.pdf>
+ <9> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <10> <M:/presentations/wq
+trends_pres/fig/radred2.pdf> <11> <M:/presentations/wqtrends_pres/fig/radred2.p
+df> <12> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <13> <M:/presentation
+s/wqtrends_pres/fig/radred2.pdf> <14> <M:/presentations/wqtrends_pres/fig/radre
+d2.pdf> <15> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <16> <M:/presenta
+tions/wqtrends_pres/fig/radred2.pdf> <17> <M:/presentations/wqtrends_pres/fig/r
+adred2.pdf> <18> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <19> <M:/pres
+entations/wqtrends_pres/fig/radred2.pdf> <20> <M:/presentations/wqtrends_pres/f
+ig/radred2.pdf> <21> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <22> <M:/
+presentations/wqtrends_pres/fig/radred2.pdf> <23> <M:/presentations/wqtrends_pr
+es/fig/radred2.pdf>
+<24> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <25> <M:/presentations/wq
+trends_pres/fig/radred2.pdf> <26> <M:/presentations/wqtrends_pres/fig/radred2.p
+df> <27> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <28> <M:/presentation
+s/wqtrends_pres/fig/radred2.pdf> <29> <M:/presentations/wqtrends_pres/fig/radre
+d2.pdf> <30> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <31> <M:/presenta
+tions/wqtrends_pres/fig/radred2.pdf> <32> <M:/presentations/wqtrends_pres/fig/r
+adred2.pdf> <33> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <34> <M:/pres
+entations/wqtrends_pres/fig/radred2.pdf> <35> <M:/presentations/wqtrends_pres/f
+ig/radred2.pdf> <36> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <37> <M:/
+presentations/wqtrends_pres/fig/radred2.pdf> <38> <M:/presentations/wqtrends_pr
+es/fig/radred2.pdf> <39> <M:/presentations/wqtrends_pres/fig/radred2.pdf> <40>
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 625.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 631.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-
-[62
+ [62
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 634.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 644.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [63
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 647.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 644.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [64
 
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
+[64
 
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 647.
-(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [65
-
-]
-<fig/widget.png, id=786, 901.86937pt x 672.26157pt>
+] <fig/widget.png, id=2140, 901.86937pt x 672.26157pt>
 File: fig/widget.png Graphic file (type png)
  <use fig/widget.png>
-Package pdftex.def Info: fig/widget.png used on input line 653.
+Package pdftex.def Info: fig/widget.png used on input line 650.
 (pdftex.def)             Requested size: 256.72147pt x 191.3606pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 653.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 650.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [66
+ [65
 
  <M:/presentations/wqtrends_pres/fig/widget.png>]
-<fig/Rlogo.png, id=793, 87.2058pt x 66.2475pt>
+<fig/Rlogo.png, id=2147, 87.2058pt x 66.2475pt>
 File: fig/Rlogo.png Graphic file (type png)
  <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 678.
+Package pdftex.def Info: fig/Rlogo.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
 
-<fig/RStudio.png, id=794, 2007.5pt x 704.6325pt>
+<fig/RStudio.png, id=2148, 2007.5pt x 704.6325pt>
 File: fig/RStudio.png Graphic file (type png)
  <use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 678.
+Package pdftex.def Info: fig/RStudio.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
 
-<fig/knit-logo.png, id=795, 240.9pt x 165.61874pt>
+<fig/knit-logo.png, id=2149, 240.9pt x 165.61874pt>
 File: fig/knit-logo.png Graphic file (type png)
  <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 678.
+Package pdftex.def Info: fig/knit-logo.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
 
-<fig/octocat.png, id=796, 123.3408pt x 123.3408pt>
+<fig/octocat.png, id=2150, 123.3408pt x 123.3408pt>
 File: fig/octocat.png Graphic file (type png)
  <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 678.
+Package pdftex.def Info: fig/octocat.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 678.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 675.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [67
+ [66
 
  <M:/presentations/wqtrends_pres/fig/Rlogo.png> <M:/presentations/wqtrends_pres
 /fig/RStudio.png> <M:/presentations/wqtrends_pres/fig/knit-logo.png> <M:/presen
@@ -2276,109 +2395,241 @@ tations/wqtrends_pres/fig/octocat.png>]
 File: fig/Rlogo.png Graphic file (type png)
 
 <use fig/Rlogo.png>
-Package pdftex.def Info: fig/Rlogo.png used on input line 678.
+Package pdftex.def Info: fig/Rlogo.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
 File: fig/RStudio.png Graphic file (type png)
  <use fig/RStudio.png>
-Package pdftex.def Info: fig/RStudio.png used on input line 678.
+Package pdftex.def Info: fig/RStudio.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
 File: fig/knit-logo.png Graphic file (type png)
  <use fig/knit-logo.png>
-Package pdftex.def Info: fig/knit-logo.png used on input line 678.
+Package pdftex.def Info: fig/knit-logo.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
 File: fig/octocat.png Graphic file (type png)
 
 <use fig/octocat.png>
-Package pdftex.def Info: fig/octocat.png used on input line 678.
+Package pdftex.def Info: fig/octocat.png used on input line 675.
 (pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 678.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 675.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [68
+ [67
 
 ]
 File: fig/NERRS_locations.png Graphic file (type png)
 
 <use fig/NERRS_locations.png>
-Package pdftex.def Info: fig/NERRS_locations.png used on input line 684.
+Package pdftex.def Info: fig/NERRS_locations.png used on input line 681.
 (pdftex.def)             Requested size: 273.83728pt x 168.44847pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 684.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 681.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [69
+ [68
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 701.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 698.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [69
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 698.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [70
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 701.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 698.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
- [71
+
+[71
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 701.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 709.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
-
-[72
+ [72
 
 ]
+<fig//metab.pdf, id=2198, 650.43pt x 361.35pt>
+File: fig//metab.pdf Graphic file (type pdf)
+ <use fig//metab.pdf>
+Package pdftex.def Info: fig//metab.pdf used on input line 722.
+(pdftex.def)             Requested size: 342.2953pt x 190.16924pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 712.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 722.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [73
 
-]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 731.
+ <M:/presentations/wqtrends_pres/fig//metab.pdf>]
+<fig/sapdo.pdf, id=2215, 505.89pt x 144.54pt>
+File: fig/sapdo.pdf Graphic file (type pdf)
+ <use fig/sapdo.pdf>
+Package pdftex.def Info: fig/sapdo.pdf used on input line 745.
+(pdftex.def)             Requested size: 308.06367pt x 88.01927pt.
+
+<fig/saptide.pdf, id=2216, 505.89pt x 144.54pt>
+File: fig/saptide.pdf Graphic file (type pdf)
+ <use fig/saptide.pdf>
+Package pdftex.def Info: fig/saptide.pdf used on input line 745.
+(pdftex.def)             Requested size: 308.06367pt x 88.01927pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
- <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 731.
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 745.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [74
 
-]
-File: fig/back_tmp.pdf Graphic file (type pdf)
+ <M:/presentations/wqtrends_pres/fig/sapdo.pdf> <M:/presentations/wqtrends_pres
+/fig/saptide.pdf>]
+File: fig/sapdo.pdf Graphic file (type pdf)
+ <use fig/sapdo.pdf>
+Package pdftex.def Info: fig/sapdo.pdf used on input line 745.
+(pdftex.def)             Requested size: 308.06367pt x 88.01927pt.
+File: fig/saptide.pdf Graphic file (type pdf)
 
-<use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 736.
+<use fig/saptide.pdf>
+Package pdftex.def Info: fig/saptide.pdf used on input line 745.
+(pdftex.def)             Requested size: 308.06367pt x 88.01927pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 745.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [75
 
-] (M:\presentations\wqtrends_pres\wqtrends_pres.bbl)
+]
+<fig/dtd_met.pdf, id=2246, 650.43pt x 397.485pt>
+File: fig/dtd_met.pdf Graphic file (type pdf)
+ <use fig/dtd_met.pdf>
+Package pdftex.def Info: fig/dtd_met.pdf used on input line 760.
+(pdftex.def)             Requested size: 342.2953pt x 209.18614pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
 
 <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 745.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 760.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [76
 
-]
+ <M:/presentations/wqtrends_pres/fig/dtd_met.pdf>]
+File: fig/Rlogo.png Graphic file (type png)
+
+<use fig/Rlogo.png>
+Package pdftex.def Info: fig/Rlogo.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
+File: fig/RStudio.png Graphic file (type png)
+ <use fig/RStudio.png>
+Package pdftex.def Info: fig/RStudio.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
+File: fig/knit-logo.png Graphic file (type png)
+ <use fig/knit-logo.png>
+Package pdftex.def Info: fig/knit-logo.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
+File: fig/octocat.png Graphic file (type png)
+
+<use fig/octocat.png>
+Package pdftex.def Info: fig/octocat.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 745.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 783.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
  [77
 
+]
+File: fig/Rlogo.png Graphic file (type png)
+ <use fig/Rlogo.png>
+Package pdftex.def Info: fig/Rlogo.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 65.00903pt.
+File: fig/RStudio.png Graphic file (type png)
+
+<use fig/RStudio.png>
+Package pdftex.def Info: fig/RStudio.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 30.0298pt.
+File: fig/knit-logo.png Graphic file (type png)
+ <use fig/knit-logo.png>
+Package pdftex.def Info: fig/knit-logo.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 58.8317pt.
+File: fig/octocat.png Graphic file (type png)
+ <use fig/octocat.png>
+Package pdftex.def Info: fig/octocat.png used on input line 783.
+(pdftex.def)             Requested size: 85.57382pt x 85.57573pt.
+File: fig/back_tmp.pdf Graphic file (type pdf)
+
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 783.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [78
 
 ]
 File: fig/back_tmp.pdf Graphic file (type pdf)
  <use fig/back_tmp.pdf>
-Package pdftex.def Info: fig/back_tmp.pdf used on input line 745.
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 795.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [79
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 804.
 (pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
 
-[78
+[80
+
+] <fig/zissou.png, id=2292, 293.095pt x 501.875pt>
+File: fig/zissou.png Graphic file (type png)
+ <use fig/zissou.png>
+Package pdftex.def Info: fig/zissou.png used on input line 842.
+(pdftex.def)             Requested size: 56.4796pt x 96.70503pt.
+
+<fig/epa_logo.png, id=2294, 195.6108pt x 196.0926pt>
+File: fig/epa_logo.png Graphic file (type png)
+ <use fig/epa_logo.png>
+Package pdftex.def Info: fig/epa_logo.png used on input line 842.
+(pdftex.def)             Requested size: 68.45801pt x 68.62445pt.
+
+Overfull \vbox (4.55942pt too high) detected at line 842
+ []
+
+File: fig/back_tmp.pdf Graphic file (type pdf)
+<use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 842.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [81
+
+ <M:/presentations/wqtrends_pres/fig/zissou.png> <M:/presentations/wqtrends_pre
+s/fig/epa_logo.png>]
+(M:\presentations\wqtrends_pres\wqtrends_pres.bbl)
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 851.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+
+[82
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 851.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [83
+
+
+]
+File: fig/back_tmp.pdf Graphic file (type pdf)
+ <use fig/back_tmp.pdf>
+Package pdftex.def Info: fig/back_tmp.pdf used on input line 851.
+(pdftex.def)             Requested size: 364.20192pt x 273.15337pt.
+ [84
 
 
 ]
@@ -2390,26 +2641,26 @@ Package pdftex.def Info: fig/back_tmp.pdf used on input line 745.
 Package caption Warning: Unused \captionsetup[subfloat] on input line 385.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 747.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 747.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 853.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 853.
 (M:\presentations\wqtrends_pres\wqtrends_pres.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 747.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 747.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 853.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 853.
 Package rerunfilecheck Info: File `wqtrends_pres.out' has not changed.
-(rerunfilecheck)             Checksum: 73A7180A0FD1EB450C05A6D576B1ABB1;276.
+(rerunfilecheck)             Checksum: 7A7DE5207A842C3272AC8ABA22D4A813;323.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 747.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 853.
  ) 
 Here is how much of TeX's memory you used:
- 28473 strings out of 493921
- 563937 string characters out of 3147282
- 669645 words of memory out of 3000000
- 30917 multiletter control sequences out of 15000+200000
- 11433 words of font info for 44 fonts, out of 3000000 for 9000
+ 29155 strings out of 493921
+ 577725 string characters out of 3147282
+ 670645 words of memory out of 3000000
+ 31580 multiletter control sequences out of 15000+200000
+ 11265 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  49i,16n,73p,475b,828s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{sub@fig:salmoyr2} has been referenced but does no
@@ -2425,12 +2676,12 @@ s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX
 s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on wqtrends_pres.pdf (78 pages, 39001959 bytes).
+mr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on wqtrends_pres.pdf (84 pages, 79034829 bytes).
 PDF statistics:
- 955 PDF objects out of 1000 (max. 8388607)
- 186 named destinations out of 1000 (max. 500000)
- 449 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2407 PDF objects out of 2487 (max. 8388607)
+ 199 named destinations out of 1000 (max. 500000)
+ 4214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

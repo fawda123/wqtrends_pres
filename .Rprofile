@@ -14,6 +14,7 @@ library(raster)
 library(animation)
 library(ggmap)
 library(rgeos)
+library(oce)
 
 source('R/funcs.R')
 

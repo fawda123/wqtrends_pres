@@ -50,7 +50,7 @@
 \usepackage{alltt}
 \usetheme{Boadilla}
 \usepackage{graphicx}
-\usepackage[draft]{animate}
+\usepackage[final]{animate}
 \usepackage{breqn}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -419,7 +419,7 @@ Based on the idea that pollution concentration is a function of \alert{time}, \a
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
 How does weighted regression work?
 \begin{center}
-% \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
+\animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
 \end{center}
 \end{frame}
 
@@ -499,7 +499,7 @@ Often used as a basis for establishing nutrient criteria \\~\\
 %%%%%%
 \begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
 \onslide<+->
-\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization that can be universally applied
+\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization \scriptsize [Hagy et al., in prep]
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
 \begin{knitrout}
@@ -558,9 +558,6 @@ Get depth points\\~\\
 \end{knitrout}
 \end{column}
 \end{columns}
-\onslide<+->
-\vspace{0.15in}
-All data are publically available
 \end{frame}
 
 %%%%%%
@@ -648,7 +645,7 @@ Lots to be done...
 
 %%%%%%
 \begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
-Development widget online: \href{https://beckmw.shinyapps.io/sg_depth/}{https://beckmw.shinyapps.io/sg_depth/}
+Development widget online: \href{https://beckmw.shinyapps.io/sg_depth/}{https://beckmw.shinyapps.io/sg\_depth/}
 \centerline{\includegraphics[width = 0.75\textwidth]{fig/widget.png}}
 \end{frame}
 
@@ -656,8 +653,8 @@ Development widget online: \href{https://beckmw.shinyapps.io/sg_depth/}{https://
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
 \onslide<+->
-Progress in science is incremental\\~\\
-This work depended on the past work of others\\~\\
+Progress in science is incremental and builds on past work\\~\\
+This requires accurate reproduction of methods\\~\\
 The ability to reproduce methods will always be a challenge...\\~\\
 \onslide<+->
 ...digital tools have proliferated to \alert{facilitate sharing}\\~\\
@@ -713,31 +710,140 @@ Designed to facilitate the analysis of SWMP data by providing functions that...\
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-What we've done so far... comparative analysis of ecosystem metabolism 
+What we've done so far... estimates of ecosystem metabolism 
+
+
+{\centering \includegraphics[width=\maxwidth]{fig//metab} 
+
+}
+
+
+
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\onslide<+->
+What we've done so far... detiding dissolved oxygen data
+
+
+{\centering \includegraphics[width=0.9\textwidth]{fig/sapdo} 
+
+}
+
+
+
+\onslide<+->
+
+
+{\centering \includegraphics[width=0.9\textwidth]{fig/saptide} 
+
+}
+
+
+
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\vspace{-0.1in}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\textwidth]{fig/dtd_met} 
+
+}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: argument 1 is not a vector}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: replacement has 0 rows, data has 452}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: object 'sort.val' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: replacement has 0 rows, data has 452}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: At least one layer must contain all variables used for facetting}}\end{kframe}
 \end{knitrout}
 \end{frame}
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\onslide<+->
+Tools in the SWMPr package (or that will be included) have facilitated comparative analyses of millions of water quality records from NERRS \\~\\
+These tools can help improve our understanding of nutrient pollution and eutrophication \\~\\
+\onslide<+->
+Potential for many other applications... actively being developed \\~\\
+\begin{columns}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/RStudio.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/knit-logo.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/octocat.png}}
+\end{column}
+\end{columns}
+\end{frame}
 
+\section{Conclusions}
+%%%%%%
+\begin{frame}{\textbf{Conclusions}}
+The analysis of water quality will continue to require the use of novel tecniques to interpret the data \\~\\
+These needs are motivated by: \\~\\
+\begin{itemize}
+\item The continued relevance of stressors that influence ecosystem conditions \\~\\
+\item Our increasing ability to gather raw, uninterpreted data \\~\\
+\end{itemize}
+Our methods must be able to make sense of \alert{historical trends}, as well as predict \alert{future conditions}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Conclusions}}
+Our ability to \alert{share}, \alert{reproduce}, and \alert{collaborate} is essential \\~\\
+\alert{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
+\alert{Seagrass applications:} \href{https://beckmw.shinyapps.io/sg_depth}{https://beckmw.shinyapps.io/sg\_depth} \\~\\
+\alert{Ecosystem metabolism and detiding:} \href{http://spark.rstudio.com/beckmw/detiding_cases/}{http://spark.rstudio.com/beckmw/detiding\_cases/} \\~\\
+\alert{This presentation:} \href{https://github.com/fawda123/wqtrends_pres}{https://github.com/fawda123/wqtrends\_pres}
+\end{frame}
+
+%%%%%%
+\begin{frame}
+Acknowledgments:\\~\\
+\begin{columns}
+\begin{column}{0.6\textwidth}
+{\footnotesize
+Research staff and employees at USEPA Gulf Ecology Division - especially J. Hagy, M. Murrell\\~\\
+Field staff and data managers at Hillsborough County Environmental Protection Commission\\~\\
+Research coordinators of the National Estuarine Research Reserve System}\\~\\
+\end{column}
+\begin{column}{0.3\textwidth}
+\vspace{-0.2in}
+\begin{center}
+{\tiny
+Wes Anderson Zissou color theme borrowed and adapted from \href{https://github.com/karthik/wesanderson}{github.com/karthik}\\~\\
+\includegraphics[width=0.55\linewidth]{fig/zissou.png}\\~\\
+\vspace{-0.15in}
+\scalebox{0.7}{\hbox{\tiny Image credit:\thinspace{\tiny \href{http://stephenmorrow.deviantart.com/}{Stephen Morrow}}}}}
+\end{center}
+\end{column}
+\end{columns}
+\vfill
+Funding sources and contact:\\~\\
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width=0.4\linewidth]{fig/epa_logo.png}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\scriptsize
+\href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov} \\~\\
+Phone: 8509342480 \\~\\
+Github: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
+Blog: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
+\end{column}
+\end{columns}
+\vspace{0.2in}
 \end{frame}
 
 %%%%%%
 \section{References}
-\begin{frame}[allowframebreaks]{\textbf{References}}
+\begin{frame}[allowframebreaks,t]{\textbf{References}}
 \tiny
 \setbeamertemplate{bibliography item}{}
 \bibliographystyle{apalike_mine}

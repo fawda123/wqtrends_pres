@@ -1,7 +1,7 @@
 \documentclass[serif]{beamer}
 \usetheme{Boadilla}
 \usepackage{graphicx}
-\usepackage[draft]{animate}
+\usepackage[final]{animate}
 \usepackage{breqn}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -751,7 +751,7 @@ dev.off()
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
 How does weighted regression work?
 \begin{center}
-% \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
+\animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
 \end{center}
 \end{frame}
 
@@ -895,7 +895,7 @@ Often used as a basis for establishing nutrient criteria \\~\\
 %%%%%%
 \begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
 \onslide<+->
-\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization that can be universally applied
+\alert{Solution 1:} Develop a reproducible and empirical method for estimating depth of colonization \scriptsize [Hagy et al., in prep]
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
 <</segmap, fig.height = 4, fig.width = 4, echo = F, results = 'hold', cache = T>>=
@@ -905,7 +905,7 @@ state <- readShapeSpatial('data/FL_state.shp')
 par(mar = c(0, 0, 2, 0), family = 'serif')
 sp::plot(state, col = pal(5)[3])
 sp::plot(segs, col = pal(5)[2], add = T)
-title('Segment-based approach', line = 0, cex.main = 1.6)
+title('Segment-based approach', line = 0, cex.main = 1.4)
 @
 \end{column}
 \begin{column}{0.45\textwidth}
@@ -952,13 +952,10 @@ state <- readShapeSpatial('data/FL_state.shp')
 par(mar=c(0,0,0,0))
 sp::plot(seg)
 sp::plot(state, add = T, col = pal(5)[3])
-points(sgrass, col = alpha(pal(5)[5], 0.5), pch =16, cex = 1.5)
+points(sgrass, col = alpha(pal(5)[5], 0.5), pch =16, cex = 0.6)
 @
 \end{column}
 \end{columns}
-\onslide<+->
-\vspace{0.15in}
-All data are publically available
 \end{frame}
 
 %%%%%%
@@ -990,7 +987,7 @@ state <- readShapeSpatial('data/FL_state.shp')
 
 # get points/size for plots
 col.pts <- rev(pal(nrow(segs)))[rank(segs$ZcMax)]
-rsc.pts<-rescale(segs$ZcMax,c(1,7))
+rsc.pts<-scales::rescale(segs$ZcMax,c(1,7))
 
 leg.text<-round(quantile(segs$ZcMax,c(0,0.33,0.66,1)),1)
 leg.cex<-seq(0.7,5,length=4)
@@ -1032,9 +1029,9 @@ par(mar=c(0,0,0,0))
 sp::plot(seg, border = 'white')
 sp::plot(state, add = T, col = pal(5)[3])
 sp::plot(seg, add = T)
-points(above, col = alpha(pal(5)[5], 0.5), pch = 16)
-points(below, col = alpha(pal(5)[5], 0.5), pch = 21)
-legend('bottomleft', legend = c('Within max depth estimate', 'Beyond max depth estimate'), col = c(alpha(pal(5)[5], 0.5),alpha(pal(5)[5], 0.5)), pch = c(16, 21), border = white)
+points(above, col = alpha(pal(5)[5], 0.5), pch = 16, cex = 0.6)
+points(below, col = alpha('black', 0.5), pch = 21, cex = 0.6)
+legend('bottomleft', legend = c('Within max depth estimate', 'Beyond max depth estimate'), col = c(alpha(pal(5)[5], 0.5), alpha('black', 0.5)), pch = c(16, 21), border = white)
 @
 \end{column}
 \onslide<+->
@@ -1052,8 +1049,8 @@ par(mar=c(0,0,0,0))
 sp::plot(seg, border = 'white')
 sp::plot(state, add = T, col = pal(5)[3])
 sp::plot(seg, add = T)
-points(above, col = alpha(pal(5)[5], 0.5), pch = 16)
-points(below, col = alpha(pal(5)[5], 0.5), pch = 21)
+points(above, col = alpha(pal(5)[5], 0.5), pch = 16, cex = 0.6)
+points(below, col = alpha('black', 0.5), pch = 21, cex = 0.6)
 sp::plot(sgpoly, add = T, col = pal(5)[1], border = NA)
 legend('bottomleft', legend = 'Actual seagrass growth', fill = alpha(pal(5)[1]), border = alpha(pal(5)[1]))
 @
@@ -1097,7 +1094,7 @@ for(rad in rads){
   sp::plot(seg, border = 'white')
   sp::plot(state, add = T, col = pal(5)[3])
   sp::plot(seg, add = T)
-  points(buff_pts, pch = 16, col = alpha('red', 0.5))
+  points(buff_pts, pch = 16, col = alpha('red', 0.5), cex = 0.6)
   points(test_pt, pch = 16, col = 'black', cex = 3)
   legend('bottomleft', legend = c('Pt of interest', 'Depth pts in buffer'), pch = c(16, 16), col = c('black', 'red'), pt.cex = c(3, 1))
   mtext(paste0("Radius from pt: ", round(rad, 2), " (dec. deg.)"), cex = 1.45, side = 1, line = 3)
@@ -1168,7 +1165,7 @@ col_ests <- split(col_ests, rep(rads, each = length(est_pts)))
 
 # get sizes for plotting
 rsc_ests <- do.call('c', rad_ests)
-rsc_ests <- rescale(rsc_ests, c(1, 5))
+rsc_ests <- scales::rescale(rsc_ests, c(1, 5))
 rsc_ests <- split(rsc_ests, rep(rads, each = length(est_pts)))
 
 # legend stuff
@@ -1229,7 +1226,7 @@ Lots to be done...
 
 %%%%%%
 \begin{frame}{\textbf{Case 2: Seagrass and water quality}}{\textbf{Making the most of existing data}}
-Development widget online: \href{https://beckmw.shinyapps.io/sg_depth/}{https://beckmw.shinyapps.io/sg_depth/}
+Development widget online: \href{https://beckmw.shinyapps.io/sg_depth/}{https://beckmw.shinyapps.io/sg\_depth/}
 \centerline{\includegraphics[width = 0.75\textwidth]{fig/widget.png}}
 \end{frame}
 
@@ -1237,8 +1234,8 @@ Development widget online: \href{https://beckmw.shinyapps.io/sg_depth/}{https://
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
 \onslide<+->
-Progress in science is incremental\\~\\
-This work depended on the past work of others\\~\\
+Progress in science is incremental and builds on past work\\~\\
+This requires accurate reproduction of methods\\~\\
 The ability to reproduce methods will always be a challenge...\\~\\
 \onslide<+->
 ...digital tools have proliferated to \alert{facilitate sharing}\\~\\
@@ -1294,12 +1291,30 @@ Designed to facilitate the analysis of SWMP data by providing functions that...\
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-What we've done so far... comparative analysis of ecosystem metabolism 
-<</metab, results = 'hold', message = F, fig = T, fig.width = 9, fig.height = 4.5, family = 'serif', width = '0.8\\textwidth', cache = T, echo = F>>=
+What we've done so far... estimates of ecosystem metabolism 
+<</metab, message = F, fig = T, fig.width = 9, fig.height = 5, family = 'serif', cache = T, echo = F>>=
+
+# load(file='M:/wq_models/SWMP/raw/rproc/dat_nem.RData')
+# 
+# sum.fun <- function(x){
+# 
+#   Pg <- mean(x$Pg,na.rm=T)
+#   Rt <- mean(x$Rt,na.rm=T)
+#   data.frame(Pg,Rt)
+#   
+#   }
+#   
+# to.plo <- lapply(dat.nem, function(x){
+#   x$Date <- as.numeric(strftime(x$Date, '%Y'))
+#   tmp <- lapply(split(x, x$Date), sum.fun)
+#   tmp <- do.call('rbind', tmp)
+#   sum.fun(tmp)
+#   })
+# nem_sum <- melt(to.plo)
+# save(nem_sum, file = 'data/nem_sum.RData')
 
 load(file='data/nem_sum.RData')
-
-to_plo <- nem_sum
+to.plo <- nem_sum
 
 #reassign factors for ranking in plot
 sort.val<-order(to.plo[to.plo$variable=='Pg','value'])
@@ -1309,19 +1324,19 @@ to.plo$L1<-factor(
   levels=levels(to.plo$L1)[sort.val],
   labels=levels(to.plo$L1)[sort.val]
   )
-new.labs<-c('Pg','Rt')
-to.plo$variable<-factor(to.plo$variable,levels=new.labs,labels=new.labs)
+new.labs<-c('Mean annual production','Mean annual respiration')
+to.plo$variable<-factor(to.plo$variable,levels=c('Pg', 'Rt'),labels=new.labs)
 
 ylabs<-expression(paste('mmol ', O[2],' ', m^-2,' ', d^-1))
 
 p<-ggplot(to.plo,aes(x=L1,y=value,group=variable,fill=variable)) + 
   geom_bar(stat='identity') + 
   scale_y_continuous(ylabs) + 
-  facet_wrap(~variable,ncol=1,scales='free_y') + 
+  facet_wrap(~variable,ncol=1, scales = 'free_y') + 
   scale_x_discrete(name=element_blank()) + 
-  theme_bw() + 
+  theme_mine() + 
   theme(
-    axis.text.x = element_text(angle = 90, vjust=0.5,hjust=1,size=7),
+    axis.text.x = element_text(angle = 90, vjust=0.5,hjust=1,size=6),
     legend.position='none'
     ) +
   scale_fill_manual(values = pal(5)[c(2, 4)])
@@ -1331,12 +1346,242 @@ print(p)
 
 %%%%%%
 \begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\onslide<+->
+What we've done so far... detiding dissolved oxygen data
+<<sapdo, cache = T, fig.height = 2, fig.width = 7, out.width = '0.9\\textwidth', eval = T, echo = F, family = 'serif'>>=
+######
+# SAPHD example
 
+load('data/case_grds.RData')
+casewins <- list(6, 1, 0.5)
+
+# subsets by case. date range, window comb
+case <- 'SAPDC'
+dat.rng<-as.Date(c('2012-02-01','2012-02-14')) 
+sel_vec <- with(case_grds, which(dec_time == casewins[[1]] & hour == casewins[[2]] & Tide == casewins[[3]]))
+sel_vec <- paste0(case, '_wtreg_', sel_vec, '.RData')
+
+load('data/SAPDC_wtreg_12.RData')
+inst_subs <- get(gsub('.RData', '', sel_vec))
+
+tzone <- attr(inst_subs$DateTimeStamp, 'tzone')
+
+inst_subs$Date <- as.Date(inst_subs$DateTimeStamp, tz = tzone)
+inst.rng <- inst_subs$Date<=dat.rng[2] & inst_subs$Date>=dat.rng[1]
+inst_subs <- inst_subs[inst.rng,]
+
+# category for plotting
+inst_subs$cats <- 'out'
+inst_subs$cats[inst_subs$Date > as.Date('2012-02-07')] <- 'in'
+
+# function for setting range on y axis
+rng.fun<-function(vec.in){
+  rngs<-range(vec.in,na.rm=T)
+  buffs<-0.07*abs(diff(rngs))
+  c(rngs[1]-buffs,rngs[2]+buffs)
+  }
+
+##
+# out of phase plots
+
+# DO plot
+to_plo <- met.day.fun(inst_subs, case)
+to_plo <- to_plo[to_plo$cats %in% 'out', ]
+names(to_plo)[names(to_plo) %in% 'variable'] <- 'solar'
+ggpoly1 <- poly.fun(to_plo$solar, to_plo, for_leg = T)
+ggpoly2 <- poly.fun(to_plo$solar, to_plo)
+
+ylab<-expression(paste('DO (mg ',L^-1,')'))
+p1 <- ggplot(to_plo, aes(x = DateTimeStamp)) + 
+  ggpoly1 +
+  geom_line(aes(y = DO_obs), colour = pal(5)[5]) +
+  coord_cartesian(ylim = rng.fun(to_plo$DO_obs)) +
+  scale_fill_manual(values=pal(5)[3],labels='Day') +
+  scale_y_continuous(ylab) +
+  theme_mine() +
+  theme(legend.position = 'none', axis.title.x = element_blank())
+print(p1)
+@
+\onslide<+->
+<<saptide, cache = T, fig.height = 2, fig.width = 7, out.width = '0.9\\textwidth', eval = T, echo = F, family = 'serif'>>=
+######
+# SAPHD example
+
+load('data/case_grds.RData')
+casewins <- list(6, 1, 0.5)
+
+# subsets by case. date range, window comb
+case <- 'SAPDC'
+dat.rng<-as.Date(c('2012-02-01','2012-02-14')) 
+sel_vec <- with(case_grds, which(dec_time == casewins[[1]] & hour == casewins[[2]] & Tide == casewins[[3]]))
+sel_vec <- paste0(case, '_wtreg_', sel_vec, '.RData')
+
+load('data/SAPDC_wtreg_12.RData')
+inst_subs <- get(gsub('.RData', '', sel_vec))
+
+tzone <- attr(inst_subs$DateTimeStamp, 'tzone')
+
+inst_subs$Date <- as.Date(inst_subs$DateTimeStamp, tz = tzone)
+inst.rng <- inst_subs$Date<=dat.rng[2] & inst_subs$Date>=dat.rng[1]
+inst_subs <- inst_subs[inst.rng,]
+
+# category for plotting
+inst_subs$cats <- 'out'
+inst_subs$cats[inst_subs$Date > as.Date('2012-02-07')] <- 'in'
+
+# function for setting range on y axis
+rng.fun<-function(vec.in){
+  rngs<-range(vec.in,na.rm=T)
+  buffs<-0.07*abs(diff(rngs))
+  c(rngs[1]-buffs,rngs[2]+buffs)
+  }
+
+##
+# out of phase plots
+
+# DO plot
+to_plo <- met.day.fun(inst_subs, case)
+to_plo <- to_plo[to_plo$cats %in% 'out', ]
+names(to_plo)[names(to_plo) %in% 'variable'] <- 'solar'
+ggpoly1 <- poly.fun(to_plo$solar, to_plo, for_leg = T)
+ggpoly2 <- poly.fun(to_plo$solar, to_plo)
+
+# tide plot
+ylab<-expression(paste('Height (m)'))
+p2 <- ggplot(to_plo, aes(x = DateTimeStamp)) + 
+  ggpoly2 +
+  geom_line(aes(y = Depth), colour = pal(5)[5]) +
+  coord_cartesian(ylim = rng.fun(to_plo$Depth)) +
+  theme_mine() + 
+  scale_y_continuous(ylab) +
+  theme(legend.position = 'none', axis.title.x = element_blank())
+print(p2)
+@
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\vspace{-0.1in}
+<<dtd_met, results = 'hold', cache = T, fig.height = 5.5, fig.width = 9, out.width = '\\textwidth', eval = T, echo = F, family = 'serif'>>=
+load('data/SAPDC_wtreg_12.RData')
+to_plo <- get('SAPDC_wtreg_12')
+
+load('data/sapdc_met.RData')
+met_plo <- melt(sapdc_met, id.var = 'Date', measure.var = c('Pg', 'Rt', 'Pg_dtd', 'Rt_dtd'))
+met_plo$type <- rep('Observed', length = nrow(met_plo))
+met_plo$type[grep('dtd$', met_plo$variable)] <- 'Detided'
+met_plo$variable <- gsub('_dtd$', '', met_plo$variable)
+met_plo$type<- factor(met_plo$type, levels = c('Observed', 'Detided'), labels = c('Observed', 'Detided'))
+met_plo$variable <- factor(met_plo$variable, levels = c('Pg', 'Rt'), labels = c('Production', 'Respiration'))
+
+ylab<-expression(paste('DO (mg ',L^-1,')'))
+p1 <- ggplot(to_plo, aes(x = DateTimeStamp)) + 
+  geom_line(aes(y = DO_obs, colour = 'Observed')) +
+  geom_line(aes(y = DO_nrm, colour = 'Detided')) +
+  scale_colour_manual('', values=pal(5)[c(2, 5)]) +
+  scale_y_continuous(ylab) +
+  theme_mine() +
+  theme(legend.position = 'top', axis.title.x = element_blank())
+
+ylab<-expression(paste('mmol ', O[2],' ', m^-2,' ', d^-1))
+p2 <- ggplot(met_plo, aes(x = Date, y = value, group = variable, colour = variable)) + 
+  geom_line() +
+  geom_point() +
+  facet_wrap(~type, ncol = 1) + 
+  scale_colour_manual('', values=pal(5)[c(1, 3)]) +
+  scale_y_continuous(ylab) +
+  theme_mine() +
+  theme(legend.position = 'top', axis.title.x = element_blank())
+
+grid.arrange(p1, p2, ncol = 1, heights = c(1.5,2))
+@
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
+\onslide<+->
+Tools in the SWMPr package (or that will be included) have facilitated comparative analyses of millions of water quality records from NERRS \\~\\
+These tools can help improve our understanding of nutrient pollution and eutrophication \\~\\
+\onslide<+->
+Potential for many other applications... actively being developed \\~\\
+\begin{columns}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/RStudio.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/knit-logo.png}}
+\end{column}
+\begin{column}{0.25\textwidth}
+\centerline{\includegraphics[width = \textwidth]{fig/octocat.png}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Conclusions}
+%%%%%%
+\begin{frame}{\textbf{Conclusions}}
+The analysis of water quality will continue to require the use of novel tecniques to interpret the data \\~\\
+These needs are motivated by: \\~\\
+\begin{itemize}
+\item The continued relevance of stressors that influence ecosystem conditions \\~\\
+\item Our increasing ability to gather raw, uninterpreted data \\~\\
+\end{itemize}
+Our methods must be able to make sense of \alert{historical trends}, as well as predict \alert{future conditions}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Conclusions}}
+Our ability to \alert{share}, \alert{reproduce}, and \alert{collaborate} is essential \\~\\
+\alert{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
+\alert{Seagrass applications:} \href{https://beckmw.shinyapps.io/sg_depth}{https://beckmw.shinyapps.io/sg\_depth} \\~\\
+\alert{Ecosystem metabolism and detiding:} \href{http://spark.rstudio.com/beckmw/detiding_cases/}{http://spark.rstudio.com/beckmw/detiding\_cases/} \\~\\
+\alert{This presentation:} \href{https://github.com/fawda123/wqtrends_pres}{https://github.com/fawda123/wqtrends\_pres}
+\end{frame}
+
+%%%%%%
+\begin{frame}
+Acknowledgments:\\~\\
+\begin{columns}
+\begin{column}{0.6\textwidth}
+{\footnotesize
+Research staff and employees at USEPA Gulf Ecology Division - especially J. Hagy, M. Murrell\\~\\
+Field staff and data managers at Hillsborough County Environmental Protection Commission\\~\\
+Research coordinators of the National Estuarine Research Reserve System}\\~\\
+\end{column}
+\begin{column}{0.3\textwidth}
+\vspace{-0.2in}
+\begin{center}
+{\tiny
+Wes Anderson Zissou color theme borrowed and adapted from \href{https://github.com/karthik/wesanderson}{github.com/karthik}\\~\\
+\includegraphics[width=0.55\linewidth]{fig/zissou.png}\\~\\
+\vspace{-0.15in}
+\scalebox{0.7}{\hbox{\tiny Image credit:\thinspace{\tiny \href{http://stephenmorrow.deviantart.com/}{Stephen Morrow}}}}}
+\end{center}
+\end{column}
+\end{columns}
+\vfill
+Funding sources and contact:\\~\\
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centerline{\includegraphics[width=0.4\linewidth]{fig/epa_logo.png}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\scriptsize
+\href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov} \\~\\
+Phone: 8509342480 \\~\\
+Github: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
+Blog: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
+\end{column}
+\end{columns}
+\vspace{0.2in}
 \end{frame}
 
 %%%%%%
 \section{References}
-\begin{frame}[allowframebreaks]{\textbf{References}}
+\begin{frame}[allowframebreaks,t]{\textbf{References}}
 \tiny
 \setbeamertemplate{bibliography item}{}
 \bibliographystyle{apalike_mine}

@@ -299,3 +299,156 @@ buff_ext <- function(pts, center, buff = 0.03){
   return(pts[sel, ])
   
 }
+
+######
+# function for plotting repeating polygons in ggplot
+# 'flag.in' is vector indicating binomial variable for polys
+# 'flag.in' can be factor or numeric (w/ two values)
+# 'dat' is data.frame with 'flag.in'
+# 'for_leg' is used to manually change color for polygons, will add legend
+# output is geom object
+poly.fun<-function(flag.in,dat, for_leg = F){
+
+  require(reshape2)
+  require(ggplot2)
+  
+  #for flag bias
+  if(class(flag.in) == 'numeric'){ 
+    neg.dates<-with(
+      dat,
+      DateTimeStamp[which(flag.in < 0)]
+      )
+    tz<-attr(neg.dates,'tzone')
+    diffs<-c(0,diff(as.numeric(neg.dates)))
+    strt.ind<-c(1,which(diffs>1800))
+    end.ind<-c(strt.ind-1,length(flag.in))
+    comb<-paste(neg.dates[strt.ind],neg.dates[end.ind],sep="\t")
+    
+    if(grepl('NA',comb[length(comb)])) 
+      comb[length(comb)]<-gsub('NA',neg.dates[length(neg.dates)],comb[length(comb)])
+  
+    comb<-do.call('rbind',strsplit(comb,'\t'))
+    comb<-cbind(comb,comb[,2],comb[,1])
+  
+    x.vals<-suppressMessages(melt(sapply(1:nrow(comb), 
+      function(x) comb[x,],simplify=F))$value)
+    x.vals<-as.POSIXct(as.character(x.vals),tz,
+      format='%Y-%m-%d %H:%M:%S')
+    y.vals<-rep(c(-1000,-1000,1000,1000),length=length(x.vals)) 
+    Antagonistic<-rep(1:(length(x.vals)/4),each=4)
+    polys<-data.frame(x.vals,y.vals,grp=Antagonistic)
+    
+    }
+
+  #for sunset/rise
+  if(class(flag.in) == 'factor'){
+    
+    plo.dates<-unique(dat[,c('solar','value')])
+    
+    if(plo.dates$solar[1] == 'sunset') 
+      plo.dates<-plo.dates[-1,]
+    if(plo.dates$solar[nrow(plo.dates)] == 'sunrise')
+      plo.dates<-rbind(
+        plo.dates,
+        data.frame(solar='sunset',value=max(dat$DateTimeStamp))
+        )
+    
+    plo.dates$inds<-rep(1:(nrow(plo.dates)/2),each=2)
+    tz<-attr(plo.dates$value,'tzone')
+    plo.dates$value <- as.character(plo.dates$value)
+    plo.dates<-dcast(plo.dates,inds~solar,value.var='value')
+    plo.dates<-with(plo.dates,
+      data.frame(sunrise,sunset,sunset,sunrise)
+      )
+   
+    x.vals <- sapply(1:nrow(plo.dates), 
+           function(x) plo.dates[x,],simplify=F)
+    x.vals<-suppressMessages(
+      melt(x.vals, measure.vars = names(x.vals[[1]]))$value
+      )
+    x.vals<-as.POSIXct(x.vals, tz, origin = '1970-01-01')
+    y.vals<-rep(c(-1000,-1000,1000,1000),nrow(plo.dates))
+    Day<-as.character(trunc(x.vals,'days'))
+    polys<-data.frame(x.vals,y.vals,grp=Day)
+
+    }
+  
+  if(for_leg){
+    out<-geom_polygon(data=polys,aes(x.vals,y.vals,group=grp, fill = 'grp'), 
+      alpha=0.6)
+  } else {
+   out<-geom_polygon(data=polys,aes(x.vals,y.vals,group=grp), fill = "#EBCC2A",
+      alpha=0.6)
+  }
+    
+  
+  return(out)
+  
+  }
+
+#functions for NEM processing of NERRS data
+#created Dec. 2013 by M. Beck, adapted from 'spam_NEM_fun.r' and M. Murrell
+
+#funcion that splits dataset into 24hr days based on sunrise
+#merge with original data
+met.day.fun<-function(dat.in, stat.in, 
+  meta.path = 'M:/wq_models/SWMP/sampling_stations.csv'
+  ){
+
+  require(StreamMetabolism)  #for sunrise.set function
+  
+  if(!exists('dat.meta')) 
+    dat.meta<-read.csv(meta.path,header=T)
+  
+  stat.meta<-toupper(paste0(stat.in,'WQ'))
+  stat.meta<-dat.meta[grep(stat.meta,toupper(dat.meta$Station.Code)),]
+  
+  # all times are standard - no DST!
+  gmt.tab<-data.frame(
+    gmt.off=c(-4,-5,-6,-8,-9),
+    tz=c('America/Virgin', 'America/Jamaica', 'America/Regina',
+      'Pacific/Pitcairn', 'Pacific/Gambier'),
+    stringsAsFactors=F
+    )
+  
+  #get sunrise/sunset times using sunrise.set function from StreamMetabolism
+  lat<-stat.meta$Latitude
+  long<--1*stat.meta$Longitude
+  GMT.Offset<-stat.meta$GMT.Offset
+  tz<-gmt.tab[gmt.tab$gmt.off==GMT.Offset,'tz']
+  start.day<-format(dat.in$DateTimeStamp[which.min(dat.in$DateTimeStamp)]-(60*60*24),format='%Y/%m/%d')
+  tot.days<-1+length(unique(as.Date(dat.in$DateTimeStamp)))
+  
+  #ss.dat is matrix of sunrise/set times for each days  within period of obs
+  ss.dat<-suppressWarnings(sunrise.set(lat,long,start.day,tz,tot.days))
+  
+  #remove duplicates, sometimes sunrise.set screws up
+  ss.dat<-ss.dat[!duplicated(strftime(ss.dat[,1],format='%Y-%m_%d')),]
+  ss.dat<-data.frame(
+    ss.dat,
+    met.date=as.Date(ss.dat$sunrise,tz=tz)
+    )
+  ss.dat<-melt(ss.dat,id.vars='met.date')
+  if(!"POSIXct" %in% class(ss.dat$value))
+    ss.dat$value<-as.POSIXct(ss.dat$value, origin='1970-01-01',tz=tz)
+  ss.dat<-ss.dat[order(ss.dat$value),]
+  ss.dat$day.hrs<-unlist(lapply(
+    split(ss.dat,ss.dat$met.date),
+    function(x) rep(as.numeric(x[2,'value']-x[1,'value']),2) 
+    ))
+  
+  #matches is vector of row numbers indicating starting value that each
+  #unique DateTimeStamp is within in ss.dat
+  #output is meteorological day matches appended to dat.in
+  matches<-findInterval(dat.in$DateTimeStamp,ss.dat$value)
+  data.frame(dat.in,ss.dat[matches,])
+      
+  }
+
+######
+# get legend from an existing ggplot object
+g_legend<-function(a.gplot){
+  tmp <- ggplot_gtable(ggplot_build(a.gplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)}
