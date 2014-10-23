@@ -325,7 +325,7 @@ for(stat in stats){
   		expression(paste('chlorophyll  ',italic(a),' (',italic(mu),'g',l^-1,')')),
   		limits=c(0,y.max)
   		) + 
-    scale_fill_gradientn(colours = pal(5)) + 
+    scale_fill_gradientn(colours = pal(5)[c(1,2,3)]) + 
     theme_mine() +
     theme(legend.position = 'none')
   
@@ -341,7 +341,7 @@ for(stat in stats){
   		expression(paste('chlorophyll  ',italic(a),' (',italic(mu),'g',l^-1,')')),
   		limits=c(0,y.max)
   		) +
-    scale_fill_gradientn(colours = pal(5)) + 
+    scale_fill_gradientn(colours = pal(5)[c(1,2,3)]) + 
     theme_mine() +
     theme(legend.position = 'none')
 
@@ -353,9 +353,9 @@ for(stat in stats){
   map_nm <- paste0('fig/wbid_map_', which(stat == stats), '.pdf')
   pdf(map_nm)
   par(mar=c(0,0,2,0))
-  plot(tb,col=pal(5)[2])
-  plot(state,add=T,col=pal(5)[3])
-  plot(tb,add=T,col=alpha('white',0))
+  sp::plot(tb,col=pal(5)[2])
+  sp::plot(state,add=T,col=pal(5)[3])
+  sp::plot(tb,add=T,col=alpha('white',0))
   points(tb.sta,cex=1.5,pch=16,col=alpha('black',0.7))
   sta.plot<-tb.sta[tb.sta$StationID %in% sta.one,]
   points(sta.plot,cex=4,pch=16,col='red')
@@ -622,7 +622,7 @@ What affects our interpretation of chlorophyll response to nutrients?
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
 \onslide<+->
 \begin{block}{Study objective}
-Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets
+Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets \scriptsize [Beck and Hagy, in review]
 \end{block}
 \vspace{0.2in}
 \onslide<+->
@@ -643,7 +643,9 @@ The \alert{weighted regression (WRTDS)} model is being developed by USGS for pol
 Based on the idea that pollution concentration is a function of \alert{time}, \alert{discharge}, and \alert{season}\\~\\
 \onslide<+->
 \alert{Problem:} We want to see if management has an effect on reducing pollutant load over time, but pollutant load varies with discharge.\\~\\
+\onslide<+->
 \alert{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
+\onslide<+->
 \alert{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
 \end{frame}
 
@@ -857,7 +859,7 @@ Because the model is dynamic, we have parameters describing the relationship of 
 %%%%%%
 \begin{frame}{\textbf{Case 1: Tampa Bay}}{\textbf{Understanding chlorophyll response to eutrophication}}
 \onslide<+->
-What does this mean for Tampa Bay?\\~\\
+What does this mean for Tampa Bay and elsewhere?\\~\\
 \begin{itemize}
 \item Predictions followed observed chlorophyll -- but increased clarity in the description
 \item More detailed evaluation of trends allows greater insight into drivers of change\\~\\
@@ -879,7 +881,7 @@ Seagrass provide numerous benefits - healthy seagrass, healthy estuary
 \end{center}
 \vfill
 \tiny
-\hfill Credit: \href{https://www.flickr.com/photos/swimvixen2/3581613875/in/photostream/}{flickr.com/photos/swimvixen2}
+\hfill \href{https://www.flickr.com/photos/swimvixen2/3581613875/in/photostream/}{flickr.com/photos/swimvixen2}
 \end{frame}
 
 %%%%%%
@@ -964,7 +966,7 @@ Plot the distribution of seagrass by increasing depth\\~\\
 \centerline{\includegraphics[width = 0.65\textwidth]{fig/Hagy_est.png}}
 \vfill
 \tiny
-\hfill Credit: [Hagy et al., in prep]
+\hfill [Hagy et al., in prep]
 \end{frame}
 
 <<sgdepthall, echo = F, eval = F>>=
@@ -1549,7 +1551,7 @@ Acknowledgments:\\~\\
 {\footnotesize
 Research staff and employees at USEPA Gulf Ecology Division - especially J. Hagy, M. Murrell\\~\\
 Field staff and data managers at Hillsborough County Environmental Protection Commission\\~\\
-Research coordinators of the National Estuarine Research Reserve System}\\~\\
+Research coordinators, technicians, and field staff of the National Estuarine Research Reserve System}\\~\\
 \end{column}
 \begin{column}{0.3\textwidth}
 \vspace{-0.2in}

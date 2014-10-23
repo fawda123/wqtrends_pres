@@ -1,7 +1,7 @@
 \beamer@endinputifotherversion {3.27pt}
 \beamer@sectionintoc {1}{Background}{2}{0}{1}
 \beamer@sectionintoc {2}{Case 1: Tampa Bay}{34}{0}{2}
-\beamer@sectionintoc {3}{Case 2: Seagrass and water quality}{48}{0}{3}
-\beamer@sectionintoc {4}{Case 3: Open-source tools}{66}{0}{4}
-\beamer@sectionintoc {5}{Conclusions}{79}{0}{5}
-\beamer@sectionintoc {6}{References}{82}{0}{6}
+\beamer@sectionintoc {3}{Case 2: Seagrass and water quality}{50}{0}{3}
+\beamer@sectionintoc {4}{Case 3: Open-source tools}{68}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{81}{0}{5}
+\beamer@sectionintoc {6}{References}{84}{0}{6}
